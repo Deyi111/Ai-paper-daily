@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embodied AI & Robotics Intelligence Digest — November 16, 2026</title>
+    <title>Embodied AI & Robotics Intelligence Digest — November 17, 2026</title>
     <style>
         :root {
             --bg-base: #080c14;
@@ -242,7 +242,7 @@
         <header>
             <span class="pill-brand">Autonomous Research Intelligence</span>
             <h1>Embodied AI & Physical Frontier Briefing</h1>
-            <p class="subtitle">Compiled on November 16, 2026 • Ranked top 8 strategic breakthroughs out of incoming preprints.</p>
+            <p class="subtitle">Compiled on November 17, 2026 • Ranked top 8 strategic breakthroughs out of incoming preprints.</p>
             
             <div class="controls">
                 <input type="text" id="filterInput" class="search-box" placeholder="Filter papers by keywords (e.g. humanoid, tactile, diffusion)...">
@@ -251,257 +251,257 @@
 
         <main id="paperList">
             
-        <article class="paper-card" data-title="x-nav technical report: real-world long-horizon indoor-to-outdoor navigation on a humanoid robot" data-summary="long-horizon navigation from indoors to outdoors remains an open problem for humanoid robots: one instruction covers rooms, doors and roads, and the camera moves with the gait. worken, agibot's measure of productive robot work, depends on robots that reach their workplaces autonomously. we present x-nav, to our knowledge the first system to take a bipedal humanoid through a language-instructed long-horizon mission from indoors to outdoors. x-nav covers a pipeline from data to deployment. its data engine collects navigation data in open-source scenes, in digital twins of deployment sites and on real robots. its navigation model, melior, takes only rgb images from the robot's built-in camera and comes in two versions: melior-a predicts actions, and melior-n predicts a navigation goal. its agentic workflow, x-navarch, turns a brief human instruction into sub-tasks and deploys melior on the robot with explicit target navigation and obstacle avoidance. on the lingxi x2, x-nav completes a mission of about a hundred metres from an office lobby to a store in a neighbouring building; lidar and odometry are used for target approach and low-level control. the mission is completed with both versions of melior: the robot follows a change of destination and walks through a door from the lobby to the road, and with x-navarch it also passes static and dynamic obstacles on the route. during deployment, melior is adapted with data collected in a digital twin of the site; the adaptation raises its closed-loop success rate in the twin, and the adapted model is then deployed on the robot at the real site. in addition, melior achieves competitive results on the r2r-ce and rxr-ce benchmarks.">
+        <article class="paper-card" data-title="reactbench-ad: do driving vlas and world-action models react to imminent hazards in their path?" data-summary="vision-language-action models (vlas) and world-action models (wams) have emerged in autonomous driving with the promise of strong generalization to long-tail scenarios. although these models achieve state-of-the-art results on autonomous driving benchmarks, most existing benchmarks are dominated by nominal scenarios and therefore cannot test this promise. to test one such long-tail capability that is critical for safety, we introduce reactbench-ad, a benchmark that measures how driving models react to objects that appear in the ego vehicle's path. built on real navsim and physicalai-autonomous-vehicles scenes, reactbench-ad composites a crossing pedestrian, a standing pedestrian, or a stationary car consistently across all camera views and history frames. each edited scene thus forms an exact, pixel-level counterfactual pair with its original, which allows us to isolate the causal effect of the inserted object on the predicted trajectory. evaluating four vlas and two wams, we find that they react weakly, often barely at all. finally, we test how easily one of the evaluated vlas, recogdrive, can be taught to brake hard for imminent hazards: a short fine-tuning stage on edited scenes substantially improves its reactions, with the learned behavior generalizing to unseen objects and fully real scenes, at minimal cost to nominal driving. these results call into question the out-of-the-box long-tail capabilities of these models, but suggest that they can be a strong foundation for acquiring them with little additional training, highlighting the value of real or synthetic data that demonstrates the long-tail behaviors nominal datasets rarely contain. code and data will be made publicly available.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #1</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">130</span>
+                    <span class="score-value">135</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">X-Nav Technical Report: Real-World Long-Horizon Indoor-to-Outdoor Navigation on a Humanoid Robot</h2>
+            <h2 class="paper-title">ReactBench-AD: Do Driving VLAs and World-Action Models React to Imminent Hazards in Their Path?</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-12</span>
-                <span>✍️ Jiaxin Huang, Chengxing Lin, Xiaoyu Luo et al.</span>
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Nikos Theodoridis, Reenu Mohandas, Sushil Sharma et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#humanoid</span><span class="badge">#bipedal</span>
+                <span class="badge">#vision-language-action</span><span class="badge">#vla</span>
             </div>
             
-            <p class="paper-summary">Long-horizon navigation from indoors to outdoors remains an open problem for humanoid robots: one instruction covers rooms, doors and roads, and the camera moves with the gait. Worken, AGIBOT's measure of productive robot work, depends on robots that reach their workplaces autonomously. We present X-Nav, to our knowledge the first system to take a bipedal humanoid through a language-instructed long-horizon mission from indoors to outdoors. X-Nav covers a pipeline from data to deployment. Its data engine collects navigation data in open-source scenes, in digital twins of deployment sites and on real robots. Its navigation model, MELIOR, takes only RGB images from the robot's built-in camera and comes in two versions: MELIOR-A predicts actions, and MELIOR-N predicts a navigation goal. Its agentic workflow, X-Navarch, turns a brief human instruction into sub-tasks and deploys MELIOR on the robot with explicit target navigation and obstacle avoidance. On the Lingxi X2, X-Nav completes a mission of about a hundred metres from an office lobby to a store in a neighbouring building; LiDAR and odometry are used for target approach and low-level control. The mission is completed with both versions of MELIOR: the robot follows a change of destination and walks through a door from the lobby to the road, and with X-Navarch it also passes static and dynamic obstacles on the route. During deployment, MELIOR is adapted with data collected in a digital twin of the site; the adaptation raises its closed-loop success rate in the twin, and the adapted model is then deployed on the robot at the real site. In addition, MELIOR achieves competitive results on the R2R-CE and RxR-CE benchmarks.</p>
+            <p class="paper-summary">Vision-Language-Action models (VLAs) and World-Action Models (WAMs) have emerged in autonomous driving with the promise of strong generalization to long-tail scenarios. Although these models achieve state-of-the-art results on autonomous driving benchmarks, most existing benchmarks are dominated by nominal scenarios and therefore cannot test this promise. To test one such long-tail capability that is critical for safety, we introduce ReactBench-AD, a benchmark that measures how driving models react to objects that appear in the ego vehicle's path. Built on real NAVSIM and PhysicalAI-Autonomous-Vehicles scenes, ReactBench-AD composites a crossing pedestrian, a standing pedestrian, or a stationary car consistently across all camera views and history frames. Each edited scene thus forms an exact, pixel-level counterfactual pair with its original, which allows us to isolate the causal effect of the inserted object on the predicted trajectory. Evaluating four VLAs and two WAMs, we find that they react weakly, often barely at all. Finally, we test how easily one of the evaluated VLAs, ReCogDrive, can be taught to brake hard for imminent hazards: a short fine-tuning stage on edited scenes substantially improves its reactions, with the learned behavior generalizing to unseen objects and fully real scenes, at minimal cost to nominal driving. These results call into question the out-of-the-box long-tail capabilities of these models, but suggest that they can be a strong foundation for acquiring them with little additional training, highlighting the value of real or synthetic data that demonstrates the long-tail behaviors nominal datasets rarely contain. Code and data will be made publicly available.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17598v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.20011v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.17598v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.20011v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="beyond prediction gain: lasr as a metric for action-grounded latents in world models" data-summary="world models that support planning, control, and interpretable reasoning require latent representations that genuinely encode action. yet the large-scale video data from which such models are learned overwhelmingly lack action annotations. latent-action models infer action-like variables from observation sequences, enabling action-aware learning from unlabeled videos or trajectories. a fundamental concern, however, remains: a latent that improves future prediction may simply encode the current state, episode progress, task identity, or other predictive shortcuts. existing evaluation practices---reconstruction loss, rollout fidelity, action recovery, or downstream performance---cannot isolate this distinction. we introduce the latent action support ratio (lasr), a dimensionless metric that measures, under offline evaluation on held-out data, whether a learned latent provides predictive support for action-related targets beyond the current state and non-action alternatives. lasr provides two complementary summaries: geolasr captures typical support, while worstlasr identifies the weakest case. we instantiate the lasr benchmark with recorded actions and corresponding physical state changes as targets, episode-held-out splits, one predictor type for all comparisons, and positive and negative controls. experiments on recorded robot manipulation data and a matched multi-task panel demonstrate that lasr detects known action information, rejects representative non-action shortcuts, and enables graded comparisons among imperfect latent representations. we further use lasr to train and audit a lightweight residual adapter, obtaining descriptively better point estimates whose uncertainty is assessed with paired comparisons. lasr thus provides a principled offline protocol for measuring action-related predictive support in world-model latents.">
+        <article class="paper-card" data-title="plandiv: test-time scaling with latent plans for vision-language-action models" data-summary="test-time scaling improves vision-language-action (vla) policies by drawing several action candidates and executing the best one. we find that its returns diminish quickly when the candidates are resampled from one decoder: they differ by noise rather than by plan, and for each of three resampling sources, going from four to eight candidates adds only 0.06-0.07 to the average number of completed tasks on calvin. we introduce plandiv, an action head that makes the candidates differ by plan: a lightweight planner proposes k latent plan hypotheses, a shared masked-diffusion executor decodes one action chunk per plan from a single backbone pass, and the policy executes the chunk that its own likelihood ranks highest. the plans are learned from demonstrations alone, without plan labels or rewards. with the backbone, data and training recipe held fixed, eight plan-conditioned candidates raise five-task chain success on calvin abc$\rightarrow$d from 56.9% to 69.9%, while eight candidates from autoregressive, plan-free or same-plan resampling reach at most 64.9%. the same-plan baseline is plandiv's own checkpoint with the plan held fixed, so this gap comes from the plans, not from drawing more samples. on libero-long, four plans remove 40% of single-candidate failures, against at most 21% for matched resampling. on a real franka arm the gain appears where a task admits more than one solution: plandiv is on par with a single-output openvla-oft+ baseline on a one-solution task and succeeds in 51 of 54 trials against 40 of 54 on two tasks with two solutions.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #2</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">90</span>
+                    <span class="score-value">135</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">Beyond Prediction Gain: LASR as a Metric for Action-Grounded Latents in World Models</h2>
+            <h2 class="paper-title">PlanDiv: Test-Time Scaling with Latent Plans for Vision-Language-Action Models</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-13</span>
-                <span>✍️ Yu Zhou, Changsong Lei, Yixiang Wei et al.</span>
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Hanbo Zhang, Lianlei Shan, Liuhaichen Yang et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#world model</span>
+                <span class="badge">#vision-language-action</span><span class="badge">#vla</span>
             </div>
             
-            <p class="paper-summary">World models that support planning, control, and interpretable reasoning require latent representations that genuinely encode action. Yet the large-scale video data from which such models are learned overwhelmingly lack action annotations. Latent-action models infer action-like variables from observation sequences, enabling action-aware learning from unlabeled videos or trajectories. A fundamental concern, however, remains: a latent that improves future prediction may simply encode the current state, episode progress, task identity, or other predictive shortcuts. Existing evaluation practices---reconstruction loss, rollout fidelity, action recovery, or downstream performance---cannot isolate this distinction. We introduce the Latent Action Support Ratio (LASR), a dimensionless metric that measures, under offline evaluation on held-out data, whether a learned latent provides predictive support for action-related targets beyond the current state and non-action alternatives. LASR provides two complementary summaries: GeoLASR captures typical support, while WorstLASR identifies the weakest case. We instantiate the LASR benchmark with recorded actions and corresponding physical state changes as targets, episode-held-out splits, one predictor type for all comparisons, and positive and negative controls. Experiments on recorded robot manipulation data and a matched multi-task panel demonstrate that LASR detects known action information, rejects representative non-action shortcuts, and enables graded comparisons among imperfect latent representations. We further use LASR to train and audit a lightweight residual adapter, obtaining descriptively better point estimates whose uncertainty is assessed with paired comparisons. LASR thus provides a principled offline protocol for measuring action-related predictive support in world-model latents.</p>
+            <p class="paper-summary">Test-time scaling improves vision-language-action (VLA) policies by drawing several action candidates and executing the best one. We find that its returns diminish quickly when the candidates are resampled from one decoder: they differ by noise rather than by plan, and for each of three resampling sources, going from four to eight candidates adds only 0.06-0.07 to the average number of completed tasks on CALVIN. We introduce PlanDiv, an action head that makes the candidates differ by plan: a lightweight planner proposes K latent plan hypotheses, a shared masked-diffusion executor decodes one action chunk per plan from a single backbone pass, and the policy executes the chunk that its own likelihood ranks highest. The plans are learned from demonstrations alone, without plan labels or rewards. With the backbone, data and training recipe held fixed, eight plan-conditioned candidates raise five-task chain success on CALVIN ABC$\rightarrow$D from 56.9% to 69.9%, while eight candidates from autoregressive, plan-free or same-plan resampling reach at most 64.9%. The same-plan baseline is PlanDiv's own checkpoint with the plan held fixed, so this gap comes from the plans, not from drawing more samples. On LIBERO-Long, four plans remove 40% of single-candidate failures, against at most 21% for matched resampling. On a real Franka arm the gain appears where a task admits more than one solution: PlanDiv is on par with a single-output OpenVLA-OFT+ baseline on a one-solution task and succeeds in 51 of 54 trials against 40 of 54 on two tasks with two solutions.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17775v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.20010v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.17775v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.20010v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="learning latent goal costs for visual world-model planning with an expanding curriculum" data-summary="image-goal planning with a frozen visual world model depends on how predicted observations are scored against the goal. mean-squared error (mse) between embeddings from a pretrained visual encoder can provide a useful signal near a goal, yet favor states across an obstacle that are visually similar to the goal and difficult to reach. we fit a small residual adapter on top of frozen i-jepa embeddings to improve this latent goal cost. starting near each goal, a planner collects trajectories from progressively wider regions of initial states. the adapter learns from the order of observations along successful trajectories, with additional comparisons inferred from failed rollouts. no task-specific progress labels are used for fitting, so the procedure can be applied to other goal-reaching tasks. dotwall and pointmaze are used in this work. in paired 50-case evaluations with identical starts, goals, world models, and planner settings, success increases from 54% to 98% in dotwall and from 82% to 96% in pointmaze. on 16 unseen dotwall layout-goal cases, the adapter fitted on one fixed layout improves agreement between latent-cost ordering and shortest legal-path ordering from 71.9% to 85.8%. the results indicate that planning experience can improve a frozen visual representation's goal cost without retraining the encoder or the world model.">
+        <article class="paper-card" data-title="movic: real-time humanoid whole-body control from monocular video streams" data-summary="real-time whole-body imitation from monocular video requires both a robust universal tracker and high-quality real-time reconstruction. we present movic, a framework that uses live rgb video as a control signal for humanoid robots without wearable tracking devices. the framework combines monocular human motion reconstruction, robot retargeting, and a transformer-based behavior foundation model. the policy receives proprioceptive history, a single explicit next-step reference, and a compact frequency-domain motion representation that supplies temporal context without explicitly stacking future reference frames, which reduces the input dimension and network size. during deployment, our extrapolation method bridges the 10-hz visual estimation with 50-hz controller, enabling asynchronous visual processing and policy execution. hardware experiments further demonstrate highly dynamic motion tracking and device-free teleoperation of bimanual and single-arm manipulation tasks from live monocular rgb input. project page: https://movicproject.github.io/ .">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #3</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">115</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Yimin Han, Jiahui Zhang, Wanyue Li et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#humanoid</span><span class="badge">#teleoperation</span>
+            </div>
+            
+            <p class="paper-summary">Real-time whole-body imitation from monocular video requires both a robust universal tracker and high-quality real-time reconstruction. We present MoViC, a framework that uses live RGB video as a control signal for humanoid robots without wearable tracking devices. The framework combines monocular human motion reconstruction, robot retargeting, and a transformer-based behavior foundation model. The policy receives proprioceptive history, a single explicit next-step reference, and a compact frequency-domain motion representation that supplies temporal context without explicitly stacking future reference frames, which reduces the input dimension and network size. During deployment, our extrapolation method bridges the 10-Hz visual estimation with 50-Hz controller, enabling asynchronous visual processing and policy execution. Hardware experiments further demonstrate highly dynamic motion tracking and device-free teleoperation of bimanual and single-arm manipulation tasks from live monocular RGB input. Project page: https://movicproject.github.io/ .</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.19998v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.19998v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="safer: navigating the exploration-exploitation dilemma in world-model-based planning for autonomous driving" data-summary="an autonomous vehicle must foresee the consequences of its actions, especially in the rare, time-critical situations where crashes happen. a world model offers this foresight, but only within the coverage of its training data, which poses an exploration-exploitation dilemma. within this coverage a planner can hardly improve on the data, and beyond it the model's errors mislead it. logs of competent driving rarely contain the failures that would widen the coverage, and agents that learn from interaction gain them only by failing themselves, without being shown what to do instead. we propose safer, a framework that learns offline from failures that others make, judged by an expert, and keeps learning online from its own driving. offline, partially trained agents and scripted, recoverable perturbations stage failures in simulation, and an expert annotates every visited state with its action and value, so that much of what the planner explores is covered before it drives. in planning, a chunked latent world model foresees the consequences fast enough for real-time use, and a risk-aware sampling-based planner evaluates candidate maneuvers by their return minus a bounded collision penalty. online, a loop continuously refines the model wherever this driving leaves the coverage of the offline data. in closed-loop evaluation against the compared methods, safer reaches the highest route completion and reward per step on the carla leaderboard routes, 0.95 and 0.77 from a privileged bird's-eye view, and the highest episode reward in metadrive, 53.4 in regular and 49.0 in safety-critical traffic. project page: https://ys-qu.github.io/safer-website.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #4</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">90</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">Learning Latent Goal Costs for Visual World-Model Planning with an Expanding Curriculum</h2>
+            <h2 class="paper-title">SAFER: Navigating the Exploration-Exploitation Dilemma in World-Model-Based Planning for Autonomous Driving</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-12</span>
-                <span>✍️ Konstantinos Mylonas, Thrasyvoulos Spyropoulos</span>
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Yansong Qu, Zilin Huang, Zihao Sheng et al.</span>
             </div>
             
             <div class="badge-cluster">
                 <span class="badge">#world model</span>
             </div>
             
-            <p class="paper-summary">Image-goal planning with a frozen visual world model depends on how predicted observations are scored against the goal. Mean-squared error (MSE) between embeddings from a pretrained visual encoder can provide a useful signal near a goal, yet favor states across an obstacle that are visually similar to the goal and difficult to reach. We fit a small residual adapter on top of frozen I-JEPA embeddings to improve this latent goal cost. Starting near each goal, a planner collects trajectories from progressively wider regions of initial states. The adapter learns from the order of observations along successful trajectories, with additional comparisons inferred from failed rollouts. No task-specific progress labels are used for fitting, so the procedure can be applied to other goal-reaching tasks. DotWall and PointMaze are used in this work. In paired 50-case evaluations with identical starts, goals, world models, and planner settings, success increases from 54% to 98% in DotWall and from 82% to 96% in PointMaze. On 16 unseen DotWall layout-goal cases, the adapter fitted on one fixed layout improves agreement between latent-cost ordering and shortest legal-path ordering from 71.9% to 85.8%. The results indicate that planning experience can improve a frozen visual representation's goal cost without retraining the encoder or the world model.</p>
+            <p class="paper-summary">An autonomous vehicle must foresee the consequences of its actions, especially in the rare, time-critical situations where crashes happen. A world model offers this foresight, but only within the coverage of its training data, which poses an exploration-exploitation dilemma. Within this coverage a planner can hardly improve on the data, and beyond it the model's errors mislead it. Logs of competent driving rarely contain the failures that would widen the coverage, and agents that learn from interaction gain them only by failing themselves, without being shown what to do instead. We propose SAFER, a framework that learns offline from failures that others make, judged by an expert, and keeps learning online from its own driving. Offline, partially trained agents and scripted, recoverable perturbations Stage failures in simulation, and an expert Annotates every visited state with its action and value, so that much of what the planner explores is covered before it drives. In planning, a chunked latent world model Foresees the consequences fast enough for real-time use, and a risk-aware sampling-based planner Evaluates candidate maneuvers by their return minus a bounded collision penalty. Online, a loop continuously Refines the model wherever this driving leaves the coverage of the offline data. In closed-loop evaluation against the compared methods, SAFER reaches the highest route completion and reward per step on the CARLA Leaderboard routes, 0.95 and 0.77 from a privileged bird's-eye view, and the highest episode reward in MetaDrive, 53.4 in regular and 49.0 in safety-critical traffic. Project page: https://ys-qu.github.io/safer-website.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17529v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.20107v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.17529v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.20107v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="when does cross-view consistency matter in multi-view appearance augmentation? a controlled study for visuomotor policies" data-summary="multi-view visual augmentation often seeks consistency across cameras, but it is unclear which forms of consistency matter for downstream control. we use simulation-state replay to manipulate cross-view coupling while preserving the per-camera perturbation distributions, physical trajectories, and action labels. across seven libero manipulation tasks, marginal-matched changes in global appearance, ghost injection, and target color have small average costs for a late-fusion diffusion policy: point estimates are near zero or negative, and the largest upper endpoint of the 90% posterior credible intervals is 2.55 percentage points. in contrast, geometrically anti-coupled observations reduce success by 3.30 percentage points relative to coupled observations (90% cri [0.64, 6.28]), with displacement magnitude, direction marginals, and the number of affected views matched. camera interventions reveal substantial dependence on wrist-view geometry, while feature analysis shows appearance sensitivity patterns associated with the factors randomized during training. act shows a higher target-color cost estimate than dp, with uncertainty that includes zero and sensitivity to task composition. within the tested tasks and policy configurations, these findings motivate selective consistency constraints: appearance coupling can sometimes be relaxed, whereas task-relevant geometry and cross-view spatial correspondence warrant protection.">
+        <article class="paper-card" data-title="egoswarm: learning decentralized robot swarm intelligence from human swarm demonstrations" data-summary="advancing from individual embodied intelligence to swarm embodied intelligence is a key step toward scalable, general-purpose embodied intelligence. complex tasks often require multiple agents to divide responsibilities, coordinate handovers, and manipulate shared objects collaboratively. however, existing robot learning methods rely primarily on individual demonstrations, which provide limited supervision for modeling dependencies among agent actions, while collecting multi-robot demonstrations at scale remains difficult. human egocentric demonstrations offer a scalable alternative, yet distributed observations from multiple participants cannot directly supervise decentralized policies. we introduce egoswarm, the first robot learning framework for learning decentralized multi-robot collaboration from human swarm demonstrations. egoswarm collects more than 50 hours of collaborative experience using a robot-free multi-person egocentric system. we introduce the swarm interaction packet (sip) and swarm interaction token (sit) to recover cross-agent interaction relations from distributed observations and transform this experience into local supervision consistent with deployment-time information constraints. we further propose swarmvla, which transfers knowledge of swarm behavior to decentralized policies conditioned on local observations, local history, and limited neighbor messages. swarmvla achieves a mean success rate of 72.2% across three categories of multi-robot collaborative tasks. project page:https://xitong-c.github.io/egoswarm_page/.">
             <div class="card-meta-top">
-                <span class="rank-tag">TOP #4</span>
+                <span class="rank-tag">TOP #5</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">90</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">EgoSwarm: Learning Decentralized Robot Swarm Intelligence from Human Swarm Demonstrations</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Ziqiang Liu, Xitong Chen, Min Li et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#vla</span>
+            </div>
+            
+            <p class="paper-summary">Advancing from individual embodied intelligence to swarm embodied intelligence is a key step toward scalable, general-purpose embodied intelligence. Complex tasks often require multiple agents to divide responsibilities, coordinate handovers, and manipulate shared objects collaboratively. However, existing robot learning methods rely primarily on individual demonstrations, which provide limited supervision for modeling dependencies among agent actions, while collecting multi-robot demonstrations at scale remains difficult. Human egocentric demonstrations offer a scalable alternative, yet distributed observations from multiple participants cannot directly supervise decentralized policies. We introduce EgoSwarm, the first robot learning framework for learning decentralized multi-robot collaboration from human swarm demonstrations. EgoSwarm collects more than 50 hours of collaborative experience using a robot-free multi-person egocentric system. We introduce the Swarm Interaction Packet (SIP) and Swarm Interaction Token (SIT) to recover cross-agent interaction relations from distributed observations and transform this experience into local supervision consistent with deployment-time information constraints. We further propose SwarmVLA, which transfers knowledge of swarm behavior to decentralized policies conditioned on local observations, local history, and limited neighbor messages. SwarmVLA achieves a mean success rate of 72.2% across three categories of multi-robot collaborative tasks. Project page:https://xitong-c.github.io/EgoSwarm_Page/.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.20100v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.20100v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="from companion to guardian: designing an emergency support system using a quadruped robot for older adults" data-summary="as older adults increasingly live alone, emergency support becomes an important function for home companion robots. in australia, demand for the care and support workforce is projected to nearly double between 2020-21 and 2049-50. service robots such as robot dogs may support older adults by combining everyday companionship with assistance when human support is not immediately available. we present the design and implementation of a domestic companion-robot system on a unitree go1 quadruped platform that combines companionship with emergency awareness and response. the system uses a three-stage interaction model consisting of companion, danger-awareness, and emergency modes. a rule-based escalation policy combines signs detected from visual and speech input to determine the current risk level and adjust how long the robot waits for the user to confirm safety before entering emergency mode. additional detected signs can shorten this waiting time. users can confirm safety, request immediate help, stop robot motion, or reset the system. we verified the implemented decision rules and escalation timing through 105 automated trials and 25 staged physical trials. additional visual evidence shortened the waiting time, and the system entered emergency mode when the waiting time ended without confirmation.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #6</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">85</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">When Does Cross-View Consistency Matter in Multi-View Appearance Augmentation? A Controlled Study for Visuomotor Policies</h2>
+            <h2 class="paper-title">From Companion to Guardian: Designing an Emergency Support System Using a Quadruped Robot for Older Adults</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-13</span>
-                <span>✍️ Zixuan Jiang</span>
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Chunyang Meng, Eduardo B. Sandoval, Josh Andres et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#diffusion policy</span>
+                <span class="badge">#quadruped</span>
             </div>
             
-            <p class="paper-summary">Multi-view visual augmentation often seeks consistency across cameras, but it is unclear which forms of consistency matter for downstream control. We use simulation-state replay to manipulate cross-view coupling while preserving the per-camera perturbation distributions, physical trajectories, and action labels. Across seven LIBERO manipulation tasks, marginal-matched changes in global appearance, ghost injection, and target color have small average costs for a late-fusion Diffusion Policy: point estimates are near zero or negative, and the largest upper endpoint of the 90% posterior credible intervals is 2.55 percentage points. In contrast, geometrically anti-coupled observations reduce success by 3.30 percentage points relative to coupled observations (90% CrI [0.64, 6.28]), with displacement magnitude, direction marginals, and the number of affected views matched. Camera interventions reveal substantial dependence on wrist-view geometry, while feature analysis shows appearance sensitivity patterns associated with the factors randomized during training. ACT shows a higher target-color cost estimate than DP, with uncertainty that includes zero and sensitivity to task composition. Within the tested tasks and policy configurations, these findings motivate selective consistency constraints: appearance coupling can sometimes be relaxed, whereas task-relevant geometry and cross-view spatial correspondence warrant protection.</p>
+            <p class="paper-summary">As older adults increasingly live alone, emergency support becomes an important function for home companion robots. In Australia, demand for the care and support workforce is projected to nearly double between 2020-21 and 2049-50. Service robots such as robot dogs may support older adults by combining everyday companionship with assistance when human support is not immediately available. We present the design and implementation of a domestic companion-robot system on a Unitree Go1 quadruped platform that combines companionship with emergency awareness and response. The system uses a three-stage interaction model consisting of companion, danger-awareness, and emergency modes. A rule-based escalation policy combines signs detected from visual and speech input to determine the current risk level and adjust how long the robot waits for the user to confirm safety before entering emergency mode. Additional detected signs can shorten this waiting time. Users can confirm safety, request immediate help, stop robot motion, or reset the system. We verified the implemented decision rules and escalation timing through 105 automated trials and 25 staged physical trials. Additional visual evidence shortened the waiting time, and the system entered emergency mode when the waiting time ended without confirmation.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17751v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.19932v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.17751v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.19932v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="touchtwin: scaling human touch data via real-to-sim-to-real" data-summary="human demonstrations are becoming the main source of data for dexterous manipulation, and real-to-sim-to-real pipelines multiply each demonstration in simulation. these pipelines rebuild the interaction from vision, which recovers how the hand moves. which fingers touch, when, and how hard remain unobserved, because a hand pose shows where each finger stops on the surface rather than how far it is driven to close. this gap is a force gap: on held-out recordings, a hand policy that imitates the observed pose grips with 0.31x the recorded force, and a policy trained on physics replays of vision-tracked poses grips with 1.55x. touchtwin closes the gap with measured human touch. each selected touchscale recording, captured with head and wrist rgb-d cameras and an 880-taxel glove, is rebuilt in mujoco. coding agents write the objects as physics-tested programs, and a per-subject tactile hand replays the interaction with the recorded touch setting the contact and the closing force of each finger. in simulation, a policy trained on touch-grounded replays grips at 0.99x the recorded force and succeeds in 20/20 trials on held-out recordings and 35/36 unseen perturbations; a contact predictor trained on them misses 13% of real contact frames, against 32% for vision-based replays. each replay also seeds perturbed demonstrations with simulated contact and force labels, rendered as realistic video in new views and scenes.">
+        <article class="paper-card" data-title="agenticjevnav: agentic object search and navigation via event-driven verification" data-summary="agentic navigation must maintain goals and adapt actions from incomplete evidence despite execution failures and delayed inference. we present agenticjevnav, which links goal-directed planning, evidence memory, event-triggered verification, and bounded execution. the agent plans from rgb, odometry, memory, and feedback, retaining goal ownership while authorizing a bounded action set. jev reviews structured evidence after blocked/failed execution or two consecutive low-progress segments. version, freshness, and once-only checks govern decision application. a single executor and independent rgb reflex constrain motion. goal revisions revoke obsolete requests and actions before replanning. across six simulated task families, agenticjevnav achieves 73.33% sr over 60 trials, 21.67 percentage points above the next-best agent-only aggregate control under differing historical protocols. a real-world genisom l1 quadruped deployment achieves 70.0% success over 30 trials, including bounded search reporting. together, the simulation and physical-robot results demonstrate the effectiveness of the proposed architecture, while remaining failures highlight opportunities to improve grounding, approach planning, and runtime.">
             <div class="card-meta-top">
-                <span class="rank-tag">TOP #5</span>
+                <span class="rank-tag">TOP #7</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">85</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">AgenticJevNav: Agentic Object Search and Navigation via Event-Driven Verification</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Shuning Zhang, Shuli Zhang, Yunheng Wang et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#quadruped</span>
+            </div>
+            
+            <p class="paper-summary">Agentic navigation must maintain goals and adapt actions from incomplete evidence despite execution failures and delayed inference. We present AgenticJevNav, which links goal-directed planning, evidence memory, event-triggered verification, and bounded execution. The Agent plans from RGB, odometry, memory, and feedback, retaining goal ownership while authorizing a bounded action set. Jev reviews structured evidence after blocked/failed execution or two consecutive low-progress segments. Version, freshness, and once-only checks govern decision application. A single executor and independent RGB reflex constrain motion. Goal revisions revoke obsolete requests and actions before replanning. Across six simulated task families, AgenticJevNav achieves 73.33% SR over 60 trials, 21.67 percentage points above the next-best Agent-only aggregate control under differing historical protocols. A real-world GENISOM L1 quadruped deployment achieves 70.0% success over 30 trials, including bounded search reporting. Together, the simulation and physical-robot results demonstrate the effectiveness of the proposed architecture, while remaining failures highlight opportunities to improve grounding, approach planning, and runtime.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.19912v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.19912v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="dappt: domain-aware policies from procedural trajectories for sim-to-real dexterous tool use" data-summary="sim-to-real rl has achieved impressive results in dexterous manipulation but remains limited to tasks with accurate rigid-body simulation. however, these methods cannot be applied to skills that involve deformable and particles, with which the simulation speed will become too slow for large-scale rl learning. we present dappt, a sim-to-real framework for end-to-end dexterous tool-use manipulation skills, e.g., sand scooping, play-dough rod-rolling, without simulating non-rigid materials. our method learns a domain-aware rl policy by tracking procedural trajectories parameterized by domain parameters, and distills it into an end-to-end domain-aware sensorimotor policy. furthermore, explicit domain represen-tation enables fast selection of domain parameters that can maximize downstream task performance. we evaluate dappt end-to-end on six dexterous manipulation tasks, including sand scooping, play-dough rod-rolling, sand scraping, mouse-wheel scrolling, dispenser pressing, and spray triggering. our method achieves 1.5-3.8x in task metrics through the best domain parameter and transfers zero-shot to the real world.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #8</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">80</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">TouchTwin: Scaling Human Touch Data via Real-to-Sim-to-Real</h2>
+            <h2 class="paper-title">DAPPT: Domain-Aware Policies from Procedural Trajectories for Sim-to-Real Dexterous Tool Use</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-13</span>
-                <span>✍️ Huiwen Han, Nuo Chen, Ziyao Zeng et al.</span>
+                <span>🗓️ 2026-11-15</span>
+                <span>✍️ Beining Han, Jia Deng</span>
             </div>
             
             <div class="badge-cluster">
                 <span class="badge">#dexterous manipulation</span>
             </div>
             
-            <p class="paper-summary">Human demonstrations are becoming the main source of data for dexterous manipulation, and real-to-sim-to-real pipelines multiply each demonstration in simulation. These pipelines rebuild the interaction from vision, which recovers how the hand moves. Which fingers touch, when, and how hard remain unobserved, because a hand pose shows where each finger stops on the surface rather than how far it is driven to close. This gap is a force gap: on held-out recordings, a hand policy that imitates the observed pose grips with 0.31x the recorded force, and a policy trained on physics replays of vision-tracked poses grips with 1.55x. TouchTwin closes the gap with measured human touch. Each selected TouchScale recording, captured with head and wrist RGB-D cameras and an 880-taxel glove, is rebuilt in MuJoCo. Coding agents write the objects as physics-tested programs, and a per-subject tactile hand replays the interaction with the recorded touch setting the contact and the closing force of each finger. In simulation, a policy trained on touch-grounded replays grips at 0.99x the recorded force and succeeds in 20/20 trials on held-out recordings and 35/36 unseen perturbations; a contact predictor trained on them misses 13% of real contact frames, against 32% for vision-based replays. Each replay also seeds perturbed demonstrations with simulated contact and force labels, rendered as realistic video in new views and scenes.</p>
+            <p class="paper-summary">Sim-to-real RL has achieved impressive results in dexterous manipulation but remains limited to tasks with accurate rigid-body simulation. However, these methods cannot be applied to skills that involve deformable and particles, with which the simulation speed will become too slow for large-scale RL learning. We present DAPPT, a sim-to-real framework for end-to-end dexterous tool-use manipulation skills, e.g., sand scooping, play-dough rod-rolling, without simulating non-rigid materials. Our method learns a domain-aware RL policy by tracking procedural trajectories parameterized by domain parameters, and distills it into an end-to-end domain-aware sensorimotor policy. Furthermore, explicit domain represen-tation enables fast selection of domain parameters that can maximize downstream task performance. We evaluate DAPPT end-to-end on six dexterous manipulation tasks, including sand scooping, play-dough rod-rolling, sand scraping, mouse-wheel scrolling, dispenser pressing, and spray triggering. Our method achieves 1.5-3.8x in task metrics through the best domain parameter and transfers zero-shot to the real world.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17619v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.20202v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.17619v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="per-agent-safe navigation of globally driven robot collectives via affine field design" data-summary="safe navigation of robot collectives requires coordinating motion and deformation so that the collective can traverse constrained environments while ensuring each robot's safety. existing controllers for swarmalator collectives largely rely on local control, where each robot receives an individual command, which causes the control and communication requirements to grow with the number of agents. we introduce a broadcast control formulation in which a single spatially affine field governs both the motion and deformation of the collective. the scalar component of the field regulates collective size, and its spatial gradient generates collective translation through non-reciprocal interactions. both components enter the collective dynamics directly, which allows per-robot wall, actuation, and cohesion constraints to be enforced using control barrier functions within a single quadratic program for the whole collective. the resulting controller continuously adapts the collective size to the local environment, and enables safe passage through corridors narrower than the unconstrained collective without pre-planned resizing. we further derive how the available actuation budget determines the reachable speed and minimum passable corridor width, and we demonstrate that two independently driven collectives can simultaneously traverse a shared junction using distinct fixed phase labels without inter-collective coordination.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #6</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">50</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">Per-Agent-Safe Navigation of Globally Driven Robot Collectives via Affine Field Design</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-13</span>
-                <span>✍️ Seunghwan Jang, Steven Ceron, Wei Xiao</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge badge-muted">#frontier</span>
-            </div>
-            
-            <p class="paper-summary">Safe navigation of robot collectives requires coordinating motion and deformation so that the collective can traverse constrained environments while ensuring each robot's safety. Existing controllers for swarmalator collectives largely rely on local control, where each robot receives an individual command, which causes the control and communication requirements to grow with the number of agents. We introduce a broadcast control formulation in which a single spatially affine field governs both the motion and deformation of the collective. The scalar component of the field regulates collective size, and its spatial gradient generates collective translation through non-reciprocal interactions. Both components enter the collective dynamics directly, which allows per-robot wall, actuation, and cohesion constraints to be enforced using control barrier functions within a single quadratic program for the whole collective. The resulting controller continuously adapts the collective size to the local environment, and enables safe passage through corridors narrower than the unconstrained collective without pre-planned resizing. We further derive how the available actuation budget determines the reachable speed and minimum passable corridor width, and we demonstrate that two independently driven collectives can simultaneously traverse a shared junction using distinct fixed phase labels without inter-collective coordination.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17859v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.17859v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="multimodal person concept model for person identification under varying observation conditions" data-summary="service robots in domestic and office environments must identify users to provide personalized services based on their preferences and previous interactions. this is challenging because only a few observations may be available for learning, while observation conditions change owing to appearance, environmental noise, and utterance content. to address this challenge, this study proposes a multimodal person concept model that learns person concepts from a small number of observations, without person labels, and enables robust identification under changing conditions. the model employs a nonparametric bayesian generative model based on the chinese restaurant process and integrates visual, acoustic, and linguistic features extracted using contrastive language-image pre-training (clip) and contrastive language-audio pretraining (clap), followed by principal component analysis (pca). we evaluated six participants under eight conditions in which appearance changes, additive noise, and transcription errors were introduced individually and in combination. averaged over the eight conditions, the proposed model achieved an identification accuracy of 0.89 while inferring the number of person concepts from the observations, which is comparable to k-means clustering that was supplied with the true number of participants (0.88). we also examined pca dimensionality, modality availability, and variation strength, and demonstrated the model on a toyota human support robot. these results show that multimodal person concept learning supports robust person identification under changing conditions, and that identification can succeed even when the number of concepts is not correctly recovered. the project page and demonstration video are available at https://okitamisan01.github.io/person_concept/.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #7</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">50</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">Multimodal Person Concept Model for Person Identification under Varying Observation Conditions</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-13</span>
-                <span>✍️ Mizuho Okitani, Yoshinobu Hagiwara</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge badge-muted">#frontier</span>
-            </div>
-            
-            <p class="paper-summary">Service robots in domestic and office environments must identify users to provide personalized services based on their preferences and previous interactions. This is challenging because only a few observations may be available for learning, while observation conditions change owing to appearance, environmental noise, and utterance content. To address this challenge, this study proposes a multimodal person concept model that learns person concepts from a small number of observations, without person labels, and enables robust identification under changing conditions. The model employs a nonparametric Bayesian generative model based on the Chinese restaurant process and integrates visual, acoustic, and linguistic features extracted using Contrastive Language-Image Pre-training (CLIP) and Contrastive Language-Audio Pretraining (CLAP), followed by principal component analysis (PCA). We evaluated six participants under eight conditions in which appearance changes, additive noise, and transcription errors were introduced individually and in combination. Averaged over the eight conditions, the proposed model achieved an identification accuracy of 0.89 while inferring the number of person concepts from the observations, which is comparable to k-means clustering that was supplied with the true number of participants (0.88). We also examined PCA dimensionality, modality availability, and variation strength, and demonstrated the model on a Toyota Human Support Robot. These results show that multimodal person concept learning supports robust person identification under changing conditions, and that identification can succeed even when the number of concepts is not correctly recovered. The project page and demonstration video are available at https://okitamisan01.github.io/person_concept/.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17802v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.17802v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="era: error-resistant autonomous object navigation with predicted depth" data-summary="depth and 3d foundation models can predict geometry from rgb images, allowing zero-shot object navigation without a depth sensor. however, when predicted depth is mapped as if it came from a sensor, view-dependent errors accumulate in the map, remove exploration goals, and end the search before the agent can observe and correct them. we propose era, a training-free object navigation system that replaces the depth sensor with depth predicted from rgb images and poses. era follows a paradigm we call move with error: movement provides new views that correct map errors, and the corrected map enables further movement. it realizes this paradigm with revisable occupancy and with exploration from reachable viewpoints, which continues the search when no frontier remains, and verifies the target across views before stopping. on three benchmarks, era achieves state-of-the-art performance among training-free methods without depth sensors. its map and exploration components also raise vlfm's success from 10.8% to 61.7% under the same predicted depth. we further deploy era on a real robot.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #8</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">50</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">ERA: Error-Resistant Autonomous Object Navigation with Predicted Depth</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-13</span>
-                <span>✍️ Shunyang Huang, Shuo Wang, Wenyuan Xie et al.</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge badge-muted">#frontier</span>
-            </div>
-            
-            <p class="paper-summary">Depth and 3D foundation models can predict geometry from RGB images, allowing zero-shot object navigation without a depth sensor. However, when predicted depth is mapped as if it came from a sensor, view-dependent errors accumulate in the map, remove exploration goals, and end the search before the agent can observe and correct them. We propose ERA, a training-free object navigation system that replaces the depth sensor with depth predicted from RGB images and poses. ERA follows a paradigm we call Move with Error: movement provides new views that correct map errors, and the corrected map enables further movement. It realizes this paradigm with revisable occupancy and with exploration from reachable viewpoints, which continues the search when no frontier remains, and verifies the target across views before stopping. On three benchmarks, ERA achieves state-of-the-art performance among training-free methods without depth sensors. Its map and exploration components also raise VLFM's success from 10.8% to 61.7% under the same predicted depth. We further deploy ERA on a real robot.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.17730v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.17730v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.20202v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
