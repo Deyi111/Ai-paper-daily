@@ -1,61 +1,61 @@
-# 🤖 Embodied AI & Robotics Frontier Briefing (2026-11-17)
+# 🤖 Embodied AI & Robotics Frontier Briefing (2026-11-18)
 
 > *Automated Intelligence Briefing generated via custom ETL scoring pipeline. Prioritizes foundation models, manipulation, locomotion, and physical AI systems.*
 
 ---
 
-### Top 1: ReactBench-AD: Do Driving VLAs and World-Action Models React to Imminent Hazards in Their Path?
-- **Priority Score**: `135 pts` | **Published**: `2026-11-15`
-- **Focus Tracks**: `#vision-language-action` `#vla`
-- **Key Authors**: Nikos Theodoridis, Reenu Mohandas, Sushil Sharma et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.20011v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.20011v1)
+### Top 1: CADENCE: Learning Acyclic Gaits for Model-Based Quadruped Locomotion
+- **Priority Score**: `140 pts` | **Published**: `2026-11-17`
+- **Focus Tracks**: `#quadruped` `#reinforcement learning` `#locomotion`
+- **Key Authors**: Owen Sullivan, Sourav Selvaraj, Mahdi Agheli
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.23102v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.23102v1)
 
 **Executive Abstract**:
-> Vision-Language-Action models (VLAs) and World-Action Models (WAMs) have emerged in autonomous driving with the promise of strong generalization to long-tail scenarios. Although these models achieve state-of-the-art results on autonomous driving benchmarks, most existing benchmarks are dominated by nominal scenarios and therefore cannot test this promise. To test one such long-tail capability that is critical for safety, we introduce ReactBench-AD, a benchmark that measures how driving models react to objects that appear in the ego vehicle's path. Built on real NAVSIM and PhysicalAI-Autonomous-Vehicles scenes, ReactBench-AD composites a crossing pedestrian, a standing pedestrian, or a stationary car consistently across all camera views and history frames. Each edited scene thus forms an exact, pixel-level counterfactual pair with its original, which allows us to isolate the causal effect of the inserted object on the predicted trajectory. Evaluating four VLAs and two WAMs, we find that they react weakly, often barely at all. Finally, we test how easily one of the evaluated VLAs, ReCogDrive, can be taught to brake hard for imminent hazards: a short fine-tuning stage on edited scenes substantially improves its reactions, with the learned behavior generalizing to unseen objects and fully real scenes, at minimal cost to nominal driving. These results call into question the out-of-the-box long-tail capabilities of these models, but suggest that they can be a strong foundation for acquiring them with little additional training, highlighting the value of real or synthetic data that demonstrates the long-tail behaviors nominal datasets rarely contain. Code and data will be made publicly available.
+> Model-based quadruped controllers usually step on a cyclic gait, which lifts the legs in a fixed order on a fixed period, wherever the safe footholds are. We present CADENCE, a learned step planner with a small action space. Every 40 ms, it picks one of at most 65 discrete choices: no step, or one leg's step to a safe foothold. It also predicts a swing time. We train CADENCE by reinforcement learning on top of a convex model predictive controller (MPC). Nothing prescribes a gait: there is no gait schedule, and the reward has no gait term, only a cost per step. The one structural constraint is that at most two legs may swing at once. The policy we analyzed developed an acyclic gait, with no fixed period or stepping order, yet it still paired diagonal legs. An inverse footstep model (IFM), fitted on a controller's logged steps, turns each foothold into a command. With only the IFM refitted, on fewer than 20,000 steps, CADENCE ran frozen on OCS2's nonlinear MPC. In simulated trials on a range of terrains (26% to 49% voids) and speeds (0.1 m/s and 0.2 m/s), it succeeded in 85.1% (mean of five seeds), against 67.8% for OCS2-Trot, 65.5% for OCS2-Single, and 39.6% in a static walk ablation of CADENCE. At 49% voids, it succeeded in 72.9%, against 43.0% for OCS2-Trot.
 
 ---
 
-### Top 2: PlanDiv: Test-Time Scaling with Latent Plans for Vision-Language-Action Models
-- **Priority Score**: `135 pts` | **Published**: `2026-11-15`
-- **Focus Tracks**: `#vision-language-action` `#vla`
-- **Key Authors**: Hanbo Zhang, Lianlei Shan, Liuhaichen Yang et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.20010v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.20010v1)
+### Top 2: PAIR: Bringing Household Robots into the Smart Home
+- **Priority Score**: `140 pts` | **Published**: `2026-11-17`
+- **Focus Tracks**: `#embodied ai` `#vla`
+- **Key Authors**: Junseong Pyo, Hyeongjin Kim, Jongwook Han et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.23070v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.23070v1)
 
 **Executive Abstract**:
-> Test-time scaling improves vision-language-action (VLA) policies by drawing several action candidates and executing the best one. We find that its returns diminish quickly when the candidates are resampled from one decoder: they differ by noise rather than by plan, and for each of three resampling sources, going from four to eight candidates adds only 0.06-0.07 to the average number of completed tasks on CALVIN. We introduce PlanDiv, an action head that makes the candidates differ by plan: a lightweight planner proposes K latent plan hypotheses, a shared masked-diffusion executor decodes one action chunk per plan from a single backbone pass, and the policy executes the chunk that its own likelihood ranks highest. The plans are learned from demonstrations alone, without plan labels or rewards. With the backbone, data and training recipe held fixed, eight plan-conditioned candidates raise five-task chain success on CALVIN ABC$\rightarrow$D from 56.9% to 69.9%, while eight candidates from autoregressive, plan-free or same-plan resampling reach at most 64.9%. The same-plan baseline is PlanDiv's own checkpoint with the plan held fixed, so this gap comes from the plans, not from drawing more samples. On LIBERO-Long, four plans remove 40% of single-candidate failures, against at most 21% for matched resampling. On a real Franka arm the gain appears where a task admits more than one solution: PlanDiv is on par with a single-output OpenVLA-OFT+ baseline on a one-solution task and succeeds in 51 of 54 trials against 40 of 54 on two tasks with two solutions.
+> Household robots often need to operate appliances, and smart appliances offer both control panels and device APIs. Existing embodied AI simulation environments, however, model appliances solely as physical objects. We introduce PAIR, a smart-home simulation environment grounded in the Matter protocol~\footnote{https://csa-iot.org/all-solutions/matter/}, the industry standard for smart-home devices. PAIR provides 84 smart-device assets whose functional control panels and APIs act on a shared device state, with ambient conditions that evolve in response to both. From a survey of 1,443 requests, we construct a benchmark of 40 tasks that all require object manipulation yet remain solvable without API access, with 340 human demonstrations for policy training. Whether run alone, with a high-level planner, or with an API-enabled planner, two fine-tuned VLA policies complete none of the 120 evaluation episodes. Robots rarely get far enough to use the API: even with oracle plans and API access, over 90\% of failed rollouts stall at navigating, grasping, or operating a door. With a perfect oracle in place of the robot's body, the best planner still gets through only 57.3\% of its plan. When choosing between pressing a button and calling an API, several planners go by whether they can read the panel, not by API latency.\footnote{We will release our code and data upon publication.}
 
 ---
 
-### Top 3: MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams
-- **Priority Score**: `115 pts` | **Published**: `2026-11-15`
-- **Focus Tracks**: `#humanoid` `#teleoperation`
-- **Key Authors**: Yimin Han, Jiahui Zhang, Wanyue Li et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.19998v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.19998v1)
+### Top 3: Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D
+- **Priority Score**: `125 pts` | **Published**: `2026-11-17`
+- **Focus Tracks**: `#world model` `#quadruped`
+- **Key Authors**: Joyjeet Singh
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.23118v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.23118v1)
 
 **Executive Abstract**:
-> Real-time whole-body imitation from monocular video requires both a robust universal tracker and high-quality real-time reconstruction. We present MoViC, a framework that uses live RGB video as a control signal for humanoid robots without wearable tracking devices. The framework combines monocular human motion reconstruction, robot retargeting, and a transformer-based behavior foundation model. The policy receives proprioceptive history, a single explicit next-step reference, and a compact frequency-domain motion representation that supplies temporal context without explicitly stacking future reference frames, which reduces the input dimension and network size. During deployment, our extrapolation method bridges the 10-Hz visual estimation with 50-Hz controller, enabling asynchronous visual processing and policy execution. Hardware experiments further demonstrate highly dynamic motion tracking and device-free teleoperation of bimanual and single-arm manipulation tasks from live monocular RGB input. Project page: https://movicproject.github.io/ .
+> A legged robot can learn to walk inside a learned simulator: a neural network that predicts the robot's next state and is run forward on its own predictions. They are usually trained and checked one step ahead, although a policy uses them for a hundred steps or more. We audit one published system end to end, without a GPU: the dynamics model of the Robotic World Model (RWM) for the ANYmal D quadruped, and the uncertainty estimate of its follow-up, RWM-U. We rebuilt the model to match the released code's outputs, losses and gradients exactly, measured 101 trained simulators, 200 compressed copies and 38 simulators of three other architectures, and trained policies inside simulators that we tested in a hand-built MuJoCo model of the robot. Training on the model's own rollouts beat one-step training at 368 steps on all ten held-out episodes (registered), although one-step training was better one step ahead. One-step checks therefore misjudge design choices: pruning 30% of the weights kept 90% of the model's skill one step ahead and 39% at 2 s. Ensemble disagreement ranked rollout error well (Spearman +0.90 at 100 steps), yet covered 4.6% of outcomes at one sigma, against 68% for a calibrated estimate, as each network's own variance collapses under the implemented loss. Two checks that need no recorded future ranked some pools of simulators well, but neither was shown better than 8-step error in a primary test. At the robot level, accuracy has not predicted walking: all 18 fine-tuned copies we tested predicted better than the released model one and eight steps ahead, yet 13 gave failing policies, and registered tests of whether any check ranks simulators by their policies were not settled. In a secondary test, running the authors' policy inside each simulator ranked them well. We also report nine of our own claims that we withdrew. Scope: one robot, one gait, simulated data, no hardware.
 
 ---
 
-### Top 4: SAFER: Navigating the Exploration-Exploitation Dilemma in World-Model-Based Planning for Autonomous Driving
-- **Priority Score**: `90 pts` | **Published**: `2026-11-15`
+### Top 4: Residual-Guided Lightweight Reinforcement Learning for Risk-Aware Trajectory Selection with a Frozen World Model
+- **Priority Score**: `120 pts` | **Published**: `2026-11-17`
+- **Focus Tracks**: `#world model` `#reinforcement learning`
+- **Key Authors**: Jiaqi Wu, Yongqi Dong, Yijie Zhong et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.22998v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.22998v1)
+
+**Executive Abstract**:
+> In automated driving, world models provide future scene predictions for evaluating candidate trajectories, but fixed selection rules may not capture scene-dependent trade-offs. We propose a residual-guided reinforcement learning (RL) framework for lightweight trajectory selection with a frozen world model and a fixed candidate bank. The framework uses proximal policy optimization (PPO) to fine-tune a joint policy over candidate selection and bounded trajectory residuals. A context-conditioned ranking network learns candidate preferences from feedback obtained by evaluating local perturbations of the selected trajectories. At inference, the selector combines learned preference and predicted risk ranks using fixed weights and returns the selected candidate trajectory without modification. Fine-tuning updates 16,106 parameters across the actor and critic, while the deployed selector retains only the 11,725-parameter ranking network, with the residual branch and critic used exclusively during training. In open-loop evaluation on the nuScenes validation set, the method reduces average Euclidean trajectory error (L2) by 3.99% relative to the RiskWorld model baseline without RL-based selection. Under matched budgets for feedback accesses and actor updates, residual exploration reduces L2 by 0.83% relative to the categorical PPO variant trained without residuals. The method also maintains lower L2 than RiskWorld when risk features are removed or shuffled.
+
+---
+
+### Top 5: Sim2CBF: From Forward Simulations to Implicit Control Barrier Function Safety Filtering without Model Derivatives
+- **Priority Score**: `90 pts` | **Published**: `2026-11-17`
 - **Focus Tracks**: `#world model`
-- **Key Authors**: Yansong Qu, Zilin Huang, Zihao Sheng et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.20107v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.20107v1)
+- **Key Authors**: Luzia Knoedler, Yihan Liu, Shaohang Han et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.22954v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.22954v1)
 
 **Executive Abstract**:
-> An autonomous vehicle must foresee the consequences of its actions, especially in the rare, time-critical situations where crashes happen. A world model offers this foresight, but only within the coverage of its training data, which poses an exploration-exploitation dilemma. Within this coverage a planner can hardly improve on the data, and beyond it the model's errors mislead it. Logs of competent driving rarely contain the failures that would widen the coverage, and agents that learn from interaction gain them only by failing themselves, without being shown what to do instead. We propose SAFER, a framework that learns offline from failures that others make, judged by an expert, and keeps learning online from its own driving. Offline, partially trained agents and scripted, recoverable perturbations Stage failures in simulation, and an expert Annotates every visited state with its action and value, so that much of what the planner explores is covered before it drives. In planning, a chunked latent world model Foresees the consequences fast enough for real-time use, and a risk-aware sampling-based planner Evaluates candidate maneuvers by their return minus a bounded collision penalty. Online, a loop continuously Refines the model wherever this driving leaves the coverage of the offline data. In closed-loop evaluation against the compared methods, SAFER reaches the highest route completion and reward per step on the CARLA Leaderboard routes, 0.95 and 0.77 from a privileged bird's-eye view, and the highest episode reward in MetaDrive, 53.4 in regular and 49.0 in safety-critical traffic. Project page: https://ys-qu.github.io/safer-website.
-
----
-
-### Top 5: EgoSwarm: Learning Decentralized Robot Swarm Intelligence from Human Swarm Demonstrations
-- **Priority Score**: `90 pts` | **Published**: `2026-11-15`
-- **Focus Tracks**: `#vla`
-- **Key Authors**: Ziqiang Liu, Xitong Chen, Min Li et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.20100v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.20100v1)
-
-**Executive Abstract**:
-> Advancing from individual embodied intelligence to swarm embodied intelligence is a key step toward scalable, general-purpose embodied intelligence. Complex tasks often require multiple agents to divide responsibilities, coordinate handovers, and manipulate shared objects collaboratively. However, existing robot learning methods rely primarily on individual demonstrations, which provide limited supervision for modeling dependencies among agent actions, while collecting multi-robot demonstrations at scale remains difficult. Human egocentric demonstrations offer a scalable alternative, yet distributed observations from multiple participants cannot directly supervise decentralized policies. We introduce EgoSwarm, the first robot learning framework for learning decentralized multi-robot collaboration from human swarm demonstrations. EgoSwarm collects more than 50 hours of collaborative experience using a robot-free multi-person egocentric system. We introduce the Swarm Interaction Packet (SIP) and Swarm Interaction Token (SIT) to recover cross-agent interaction relations from distributed observations and transform this experience into local supervision consistent with deployment-time information constraints. We further propose SwarmVLA, which transfers knowledge of swarm behavior to decentralized policies conditioned on local observations, local history, and limited neighbor messages. SwarmVLA achieves a mean success rate of 72.2% across three categories of multi-robot collaborative tasks. Project page:https://xitong-c.github.io/EgoSwarm_Page/.
+> Failure avoidance in complex robot-environment interactions is challenging because the underlying dynamics are difficult to model accurately, and available predictive models may not provide reliable derivatives. We present Sim2CBF, a failure-avoidance framework that solves the Control Barrier Function (CBF)-Safety Filter (SF) optimization problem using only forward-model evaluations, thereby avoiding differentiation of the predictive model. Specifically, we approximate the CBF constraint using finite differences and local linear interpolation over sampled control inputs while preserving failure-avoidance guarantees. The underlying CBF is implicit and constructed from backup-policy rollouts, enabling the use of expressive predictive models such as physics-based simulators and learned world models. Compared with purely sampling-based SFs, our formulation requires fewer control samples and yields less conservative behavior than direct nominal-backup blending. We evaluate Sim2CBF in simulation, hardware box-toppling, and vision-based control tasks, demonstrating its applicability to contact-rich and learned dynamics, as well as its adaptability to changes in the predictive model.
 
 ---
 
