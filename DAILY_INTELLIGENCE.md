@@ -1,61 +1,61 @@
-# 🤖 Embodied AI & Robotics Frontier Briefing (2026-11-22)
+# 🤖 Embodied AI & Robotics Frontier Briefing (2026-11-23)
 
 > *Automated Intelligence Briefing generated via custom ETL scoring pipeline. Prioritizes foundation models, manipulation, locomotion, and physical AI systems.*
 
 ---
 
-### Top 1: PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation
-- **Priority Score**: `180 pts` | **Published**: `2026-11-19`
-- **Focus Tracks**: `#humanoid` `#vision-language-action` `#vla`
-- **Key Authors**: Kai Lu, Chenyang Ma, Ioannis Havoutis
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.26596v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.26596v1)
+### Top 1: What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage
+- **Priority Score**: `170 pts` | **Published**: `2026-11-20`
+- **Focus Tracks**: `#humanoid` `#world model` `#quadruped`
+- **Key Authors**: Hassan Iqbal, Krishna Kumar
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27939v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27939v1)
 
 **Executive Abstract**:
-> Robotic vision-language-action (VLA) models can execute diverse individual manipulation skills, yet they still struggle with long-horizon loco-manipulation tasks, where temporal structure, skills, and precision are tightly coupled within a monolithic model. We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics. PGX decomposes long-horizon loco-manipulation into three layers: (i) a predicate-based state machine governs task progression, using physical predicates to gate phase transitions, trigger recovery, and coordinate navigation and waiting. Shared predicate semantics connect offline demonstration segmentation, online execution, and stage-wise evaluation; (ii) VLA skills operate within active manipulation phases, with flat or stage-trained models concentrating on task-relevant actions; and (iii) world-coordinate locking (WCL) maintains spatial consistency through base station keeping, object-relative positioning, and world-anchored contact targets. We demonstrate the effectiveness of PGX with extensive experiments conducted on three simulated tasks and one real-world task using a Unitree G1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates. Project page is available at: https://kl-research.github.io/pgx
+> When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. We argue that whether a learned model helps such a robot depends on its decision interface, that is, on what the model hands to the planner. A decision policy tells the planner what to do, whereas an outcome model, a kind of world model, predicts the consequences of each route. We study simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. We compare four interfaces. The first is a decision policy, and the second is the same policy trained with fixed penalties for infeasible routes. The third is an outcome model that predicts the feasibility and travel time of each route. The fourth, which we call a capability contract, is an outcome model that predicts the chance of success and the travel time of the robot on each terrain and composes them along a route. All share the same collected experience, matched tuning and risk calibration, and an uncertainty guard. Two comparatively low-risk probes let the capability contract rank hazardous terrains about as well as four new trials on every hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.
 
 ---
 
-### Top 2: PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity
-- **Priority Score**: `180 pts` | **Published**: `2026-11-19`
-- **Focus Tracks**: `#humanoid` `#vision-language-action` `#vla`
-- **Key Authors**: Hao Vo, Taisei Hanyu, Yuki Ikebe et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.26565v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.26565v1)
+### Top 2: Trust What Repeats: Capped World-Model Policy Gradients for Humanoid Motion Tracking
+- **Priority Score**: `135 pts` | **Published**: `2026-11-20`
+- **Focus Tracks**: `#humanoid` `#world model`
+- **Key Authors**: Xuzhe Dang, Stefan Edelkamp
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27648v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27648v1)
 
 **Executive Abstract**:
-> Vision-Language-Action (VLA) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper--object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. As a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data. We address this gap through the lens of dynamic extrinsic dexterity and introduce PhyDEX, a throwing benchmark in which a robot must infer an object's mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. PhyDEX contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. We evaluate three representative VLAs, GR00T N1.7, DynamicVLA, and ForceVLA, and find that all achieve success rates below 3\%. Our analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. Experiments on a humanoid robot and in the real world show the same failure patterns. We hope PhyDEX will drive the development of physically grounded robot policies.
+> Training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast, because the model gives a first-order policy gradient. We ask how much of that gradient holds in the simulator. On a tracker for the Unitree G1, the $0.5\%$ of imagined rollouts with the largest gradients carry $22\%$ of the summed gradient norm, yet neither a second rollout from the same state nor the simulator confirms them. When the actions are moved along the model's gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and 1% above 30 times; the part of a gradient that either check confirms stops growing at a few times the median. We therefore cap each rollout's action-gradient norm at 10 times the batch median, draw imagination starts in proportion to their predicted gradient norm so that the cap removes less, and reset episodes where the world model and critic predict the lowest return. Trained on 223 hours of motion and tested on 353 motions that no actor performed in training, the method raises the normalized return of SuperMimic, the baseline it builds on, from 0.953 to 0.967 and the lowest $1\%$ of test clips from 0.65 to 0.76, halves the test clips that fall persistently, from 15--18 to 7--10, and reaches the baseline's final return in 40% of the baseline's iterations and half its training time. On LAFAN1, trained and evaluated on the same clips as prior work, it reaches 0.935 against 0.906.
 
 ---
 
-### Top 3: TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action
-- **Priority Score**: `165 pts` | **Published**: `2026-11-19`
-- **Focus Tracks**: `#tactile sensing` `#vision-language-action` `#vla`
-- **Key Authors**: Weile Li, Yunfan Lou, Muqing Shi et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.26405v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.26405v1)
+### Top 3: Humanoid robots for safety-critical electrical switching: A perception-informed runtime constraint filter
+- **Priority Score**: `115 pts` | **Published**: `2026-11-20`
+- **Focus Tracks**: `#humanoid` `#teleoperation`
+- **Key Authors**: Songyang Liu, Yu Hou, Yuqing Hu et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27845v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27845v1)
 
 **Executive Abstract**:
-> Vision-Language-Action (VLA) models have recently been equipped with tactile sensing to perceive visually subtle contact events in contact-rich manipulation. However, adding tactile input yields inconsistent gains, and some visuo-tactile VLA models rely little on tactile input, because much of the tactile change, such as the gel deformation during gripper closure, is predictable from visual observations and executed actions. To address this problem, we introduce TacInno, which isolates the contact dynamics that vision and executed actions cannot explain, termed tactile innovation, and uses tactile innovation only as a training target. Specifically, the TacInno tokenizer, conditioned on visual observations and executed actions, compresses the future tactile change into a discrete code, and the policy, TacInno-VLA, learns to predict the code, adding no module for the code at deployment. TacInno-VLA achieves average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, outperforming the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, respectively. Ablation studies validate the contributions of visual and action conditioning, multi-frame encoding, and auxiliary code prediction. Together, these results demonstrate the effectiveness of tactile innovation as a supervision signal for contact-rich manipulation.
+> Humanoid robots can reduce personnel exposure in electrical switching, but safe control is challenging because the tool must reach a target switch next to similar devices, where an imprecise operator command can contact a non-target switch. This study proposes a runtime safety filter that checks each operator command during virtual-reality teleoperation of a humanoid robot. The filter integrates a scene model estimated from the robot head camera and a target-conditioned control barrier function quadratic program that keeps the tool away from the non-target switch while passing safe commands unchanged. In real-world experiments on a Unitree G1 humanoid robot, with six rounds at each of two standing positions, target operations succeed in all ten rounds with an unchanged target and no non-target actuation. A simulation study achieves 9/9 safe completions, compared with 5/9 for raw teleoperation, demonstrating the feasibility of the method for humanoid switching operations.
 
 ---
 
-### Top 4: LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control
-- **Priority Score**: `160 pts` | **Published**: `2026-11-19`
-- **Focus Tracks**: `#humanoid` `#quadruped` `#reinforcement learning`
-- **Key Authors**: Firas Al-Hafez, Davide Tateo, Oleg Kaidanov et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.26293v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.26293v1)
+### Top 4: S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals
+- **Priority Score**: `95 pts` | **Published**: `2026-11-20`
+- **Focus Tracks**: `#humanoid`
+- **Key Authors**: Kun Yang, Xuanyu Chen, Jing Tan et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27552v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27552v1)
 
 **Executive Abstract**:
-> LocoMuJoCo is an open-source benchmark for imitation learning (IL) and reinforcement learning (RL) on whole-body control. The library couples MuJoCo (CPU) with MJX and the MjWarp backend (GPU) under a single API, exposes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments, and ships a curated native motion-capture dataset for every humanoid, to which it can also retarget AMASS and LAFAN1. A modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization fully interchangeable, while compact JAX implementations of many RL and IL algorithms provide JIT-compiled end-to-end training, and the companion loco-mujoco-real repository provides sim-to-real deployment. We describe the design, the SMPL-to-robot and robot-to-robot retargeting pipeline, and a usage example. LocoMuJoCo is released under MIT at https://github.com/robfiras/loco-mujoco.
+> General-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. However, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. Inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. Specifically, we first introduce Spatial Grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Then, Time-Conditioned Distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Lastly, Generative Fine-Tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. We further deploy S-BFM on the full-size AGIBOT A3 humanoid. Sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.
 
 ---
 
-### Top 5: Awaken-HI: Scaling Humanoid Intelligence with Whole-Body Human Experience
-- **Priority Score**: `140 pts` | **Published**: `2026-11-19`
-- **Focus Tracks**: `#humanoid` `#vision-language-action`
-- **Key Authors**: EngineAI
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.26420v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.26420v1)
+### Top 5: SOAR: Training-Free Rank-Consistent Rollout Compression for Latent World Model Planning
+- **Priority Score**: `90 pts` | **Published**: `2026-11-20`
+- **Focus Tracks**: `#world model`
+- **Key Authors**: Anqi Li, Kai Liu, Linghe Kong et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27639v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27639v1)
 
 **Executive Abstract**:
-> A central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces. Existing egocentric video datasets cover many of these activities but provide little synchronized whole-body motion data for learning loco-manipulation at scale. We build Awaken-Human, which pairs approximately 50,000 hours of egocentric stereo video with synchronized whole-body human motion and covers more than 100 skills. Building on this, we also introduce Awaken-HI (Humanoid Intelligence), a vision-language-action model for humanoid loco-manipulation that jointly predicts original human motion and retargeted robot actions through a shared action expert. We show that loco-manipulation skills transfer more effectively from people to humanoids when human trajectories directly supervise the shared action expert. Increasing human pretraining data reduces held-out robot action prediction error according to an empirical scaling law and raises the mean success rate on downstream real-robot tasks. After full-corpus pretraining and T800 adaptation, Awaken-HI achieves a mean success rate of 93.75% across eight individual tasks and outperforms GR00T N1.7 and $π_{0.5}$ in both individual and long-horizon evaluations. The same policy generalizes to objects unseen during robot post-training and to new pairings of familiar objects and destinations.
+> Latent world models plan by rolling out hundreds of candidate action sequences through a transformer predictor, so a single decision can take tens of seconds. Existing accelerations prune spatial tokens as in vision-language models, yet a sampling-based planner uses predicted costs only to rank candidates, so a rollout can be compressed freely as long as the ranking survives. We propose SOAR, a training-free method that adapts rollout compression to each planning decision. At every decision, SOAR probes a few candidates under several token budgets and keeps the smallest budget that preserves their ranking, so it compresses as far as the current decision allows, without task labels. A closed-loop study of more than 80,000 episodes fixes the rest of the rollout: the first step, which alone reads a real observation, stays exact, and the context frame is cached rather than recomputed. On seven navigation and manipulation tasks with frozen checkpoints, SOAR matches dense-level planning success at 2.3x speedup and retains 98% at 2.5x. Our code is available at https://github.com/starrywiki/SOAR.
 
 ---
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embodied AI & Robotics Intelligence Digest — November 22, 2026</title>
+    <title>Embodied AI & Robotics Intelligence Digest — November 23, 2026</title>
     <style>
         :root {
             --bg-base: #080c14;
@@ -242,7 +242,7 @@
         <header>
             <span class="pill-brand">Autonomous Research Intelligence</span>
             <h1>Embodied AI & Physical Frontier Briefing</h1>
-            <p class="subtitle">Compiled on November 22, 2026 • Ranked top 8 strategic breakthroughs out of incoming preprints.</p>
+            <p class="subtitle">Compiled on November 23, 2026 • Ranked top 8 strategic breakthroughs out of incoming preprints.</p>
             
             <div class="controls">
                 <input type="text" id="filterInput" class="search-box" placeholder="Filter papers by keywords (e.g. humanoid, tactile, diffusion)...">
@@ -251,257 +251,257 @@
 
         <main id="paperList">
             
-        <article class="paper-card" data-title="pgx: physically grounded execution for long-horizon humanoid loco-manipulation" data-summary="robotic vision-language-action (vla) models can execute diverse individual manipulation skills, yet they still struggle with long-horizon loco-manipulation tasks, where temporal structure, skills, and precision are tightly coupled within a monolithic model. we propose physically grounded execution (pgx), a framework that offloads temporal and precision control to two classical training-free components, allowing the vla to focus on stage-specific skill dynamics. pgx decomposes long-horizon loco-manipulation into three layers: (i) a predicate-based state machine governs task progression, using physical predicates to gate phase transitions, trigger recovery, and coordinate navigation and waiting. shared predicate semantics connect offline demonstration segmentation, online execution, and stage-wise evaluation; (ii) vla skills operate within active manipulation phases, with flat or stage-trained models concentrating on task-relevant actions; and (iii) world-coordinate locking (wcl) maintains spatial consistency through base station keeping, object-relative positioning, and world-anchored contact targets. we demonstrate the effectiveness of pgx with extensive experiments conducted on three simulated tasks and one real-world task using a unitree g1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates. project page is available at: https://kl-research.github.io/pgx">
+        <article class="paper-card" data-title="what must a model tell a planner? outcome interfaces for risk-aware planning after robot damage" data-summary="when a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. we argue that whether a learned model helps such a robot depends on its decision interface, that is, on what the model hands to the planner. a decision policy tells the planner what to do, whereas an outcome model, a kind of world model, predicts the consequences of each route. we study simulated unitree go2 quadrupeds and h1 humanoids with weakened motors, added payloads, or reduced foot friction. we compare four interfaces. the first is a decision policy, and the second is the same policy trained with fixed penalties for infeasible routes. the third is an outcome model that predicts the feasibility and travel time of each route. the fourth, which we call a capability contract, is an outcome model that predicts the chance of success and the travel time of the robot on each terrain and composes them along a route. all share the same collected experience, matched tuning and risk calibration, and an uncertainty guard. two comparatively low-risk probes let the capability contract rank hazardous terrains about as well as four new trials on every hazard. at a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on go2 and from 57% to 35-36% on h1 compared with the plain policy. fixed penalties narrow this gap, but the best penalty changes with the risk target. predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #1</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">180</span>
+                    <span class="score-value">170</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation</h2>
+            <h2 class="paper-title">What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Kai Lu, Chenyang Ma, Ioannis Havoutis</span>
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Hassan Iqbal, Krishna Kumar</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#humanoid</span><span class="badge">#vision-language-action</span><span class="badge">#vla</span>
+                <span class="badge">#humanoid</span><span class="badge">#world model</span><span class="badge">#quadruped</span>
             </div>
             
-            <p class="paper-summary">Robotic vision-language-action (VLA) models can execute diverse individual manipulation skills, yet they still struggle with long-horizon loco-manipulation tasks, where temporal structure, skills, and precision are tightly coupled within a monolithic model. We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics. PGX decomposes long-horizon loco-manipulation into three layers: (i) a predicate-based state machine governs task progression, using physical predicates to gate phase transitions, trigger recovery, and coordinate navigation and waiting. Shared predicate semantics connect offline demonstration segmentation, online execution, and stage-wise evaluation; (ii) VLA skills operate within active manipulation phases, with flat or stage-trained models concentrating on task-relevant actions; and (iii) world-coordinate locking (WCL) maintains spatial consistency through base station keeping, object-relative positioning, and world-anchored contact targets. We demonstrate the effectiveness of PGX with extensive experiments conducted on three simulated tasks and one real-world task using a Unitree G1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates. Project page is available at: https://kl-research.github.io/pgx</p>
+            <p class="paper-summary">When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. We argue that whether a learned model helps such a robot depends on its decision interface, that is, on what the model hands to the planner. A decision policy tells the planner what to do, whereas an outcome model, a kind of world model, predicts the consequences of each route. We study simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. We compare four interfaces. The first is a decision policy, and the second is the same policy trained with fixed penalties for infeasible routes. The third is an outcome model that predicts the feasibility and travel time of each route. The fourth, which we call a capability contract, is an outcome model that predicts the chance of success and the travel time of the robot on each terrain and composes them along a route. All share the same collected experience, matched tuning and risk calibration, and an uncertainty guard. Two comparatively low-risk probes let the capability contract rank hazardous terrains about as well as four new trials on every hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26596v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.27939v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.26596v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.27939v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="phydex: a benchmark for physical reasoning in vision-language-action models via dynamic extrinsic dexterity" data-summary="vision-language-action (vla) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper--object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. as a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data. we address this gap through the lens of dynamic extrinsic dexterity and introduce phydex, a throwing benchmark in which a robot must infer an object's mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. phydex contains 35k trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. all data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. we evaluate three representative vlas, gr00t n1.7, dynamicvla, and forcevla, and find that all achieve success rates below 3\%. our analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. experiments on a humanoid robot and in the real world show the same failure patterns. we hope phydex will drive the development of physically grounded robot policies.">
+        <article class="paper-card" data-title="trust what repeats: capped world-model policy gradients for humanoid motion tracking" data-summary="training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast, because the model gives a first-order policy gradient. we ask how much of that gradient holds in the simulator. on a tracker for the unitree g1, the $0.5\%$ of imagined rollouts with the largest gradients carry $22\%$ of the summed gradient norm, yet neither a second rollout from the same state nor the simulator confirms them. when the actions are moved along the model's gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and 1% above 30 times; the part of a gradient that either check confirms stops growing at a few times the median. we therefore cap each rollout's action-gradient norm at 10 times the batch median, draw imagination starts in proportion to their predicted gradient norm so that the cap removes less, and reset episodes where the world model and critic predict the lowest return. trained on 223 hours of motion and tested on 353 motions that no actor performed in training, the method raises the normalized return of supermimic, the baseline it builds on, from 0.953 to 0.967 and the lowest $1\%$ of test clips from 0.65 to 0.76, halves the test clips that fall persistently, from 15--18 to 7--10, and reaches the baseline's final return in 40% of the baseline's iterations and half its training time. on lafan1, trained and evaluated on the same clips as prior work, it reaches 0.935 against 0.906.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #2</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">180</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Hao Vo, Taisei Hanyu, Yuki Ikebe et al.</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge">#humanoid</span><span class="badge">#vision-language-action</span><span class="badge">#vla</span>
-            </div>
-            
-            <p class="paper-summary">Vision-Language-Action (VLA) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper--object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. As a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data. We address this gap through the lens of dynamic extrinsic dexterity and introduce PhyDEX, a throwing benchmark in which a robot must infer an object's mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. PhyDEX contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. We evaluate three representative VLAs, GR00T N1.7, DynamicVLA, and ForceVLA, and find that all achieve success rates below 3\%. Our analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. Experiments on a humanoid robot and in the real world show the same failure patterns. We hope PhyDEX will drive the development of physically grounded robot policies.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26565v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.26565v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="tacinno: teaching vision-language-action models the contact dynamics beyond vision and action" data-summary="vision-language-action (vla) models have recently been equipped with tactile sensing to perceive visually subtle contact events in contact-rich manipulation. however, adding tactile input yields inconsistent gains, and some visuo-tactile vla models rely little on tactile input, because much of the tactile change, such as the gel deformation during gripper closure, is predictable from visual observations and executed actions. to address this problem, we introduce tacinno, which isolates the contact dynamics that vision and executed actions cannot explain, termed tactile innovation, and uses tactile innovation only as a training target. specifically, the tacinno tokenizer, conditioned on visual observations and executed actions, compresses the future tactile change into a discrete code, and the policy, tacinno-vla, learns to predict the code, adding no module for the code at deployment. tacinno-vla achieves average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, outperforming the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, respectively. ablation studies validate the contributions of visual and action conditioning, multi-frame encoding, and auxiliary code prediction. together, these results demonstrate the effectiveness of tactile innovation as a supervision signal for contact-rich manipulation.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #3</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">165</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Weile Li, Yunfan Lou, Muqing Shi et al.</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge">#tactile sensing</span><span class="badge">#vision-language-action</span><span class="badge">#vla</span>
-            </div>
-            
-            <p class="paper-summary">Vision-Language-Action (VLA) models have recently been equipped with tactile sensing to perceive visually subtle contact events in contact-rich manipulation. However, adding tactile input yields inconsistent gains, and some visuo-tactile VLA models rely little on tactile input, because much of the tactile change, such as the gel deformation during gripper closure, is predictable from visual observations and executed actions. To address this problem, we introduce TacInno, which isolates the contact dynamics that vision and executed actions cannot explain, termed tactile innovation, and uses tactile innovation only as a training target. Specifically, the TacInno tokenizer, conditioned on visual observations and executed actions, compresses the future tactile change into a discrete code, and the policy, TacInno-VLA, learns to predict the code, adding no module for the code at deployment. TacInno-VLA achieves average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, outperforming the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, respectively. Ablation studies validate the contributions of visual and action conditioning, multi-frame encoding, and auxiliary code prediction. Together, these results demonstrate the effectiveness of tactile innovation as a supervision signal for contact-rich manipulation.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26405v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.26405v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="locomujoco: a comprehensive imitation learning benchmark for whole-body control" data-summary="locomujoco is an open-source benchmark for imitation learning (il) and reinforcement learning (rl) on whole-body control. the library couples mujoco (cpu) with mjx and the mjwarp backend (gpu) under a single api, exposes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments, and ships a curated native motion-capture dataset for every humanoid, to which it can also retarget amass and lafan1. a modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization fully interchangeable, while compact jax implementations of many rl and il algorithms provide jit-compiled end-to-end training, and the companion loco-mujoco-real repository provides sim-to-real deployment. we describe the design, the smpl-to-robot and robot-to-robot retargeting pipeline, and a usage example. locomujoco is released under mit at https://github.com/robfiras/loco-mujoco.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #4</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">160</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Firas Al-Hafez, Davide Tateo, Oleg Kaidanov et al.</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge">#humanoid</span><span class="badge">#quadruped</span><span class="badge">#reinforcement learning</span>
-            </div>
-            
-            <p class="paper-summary">LocoMuJoCo is an open-source benchmark for imitation learning (IL) and reinforcement learning (RL) on whole-body control. The library couples MuJoCo (CPU) with MJX and the MjWarp backend (GPU) under a single API, exposes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments, and ships a curated native motion-capture dataset for every humanoid, to which it can also retarget AMASS and LAFAN1. A modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization fully interchangeable, while compact JAX implementations of many RL and IL algorithms provide JIT-compiled end-to-end training, and the companion loco-mujoco-real repository provides sim-to-real deployment. We describe the design, the SMPL-to-robot and robot-to-robot retargeting pipeline, and a usage example. LocoMuJoCo is released under MIT at https://github.com/robfiras/loco-mujoco.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26293v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.26293v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="awaken-hi: scaling humanoid intelligence with whole-body human experience" data-summary="a central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces. existing egocentric video datasets cover many of these activities but provide little synchronized whole-body motion data for learning loco-manipulation at scale. we build awaken-human, which pairs approximately 50,000 hours of egocentric stereo video with synchronized whole-body human motion and covers more than 100 skills. building on this, we also introduce awaken-hi (humanoid intelligence), a vision-language-action model for humanoid loco-manipulation that jointly predicts original human motion and retargeted robot actions through a shared action expert. we show that loco-manipulation skills transfer more effectively from people to humanoids when human trajectories directly supervise the shared action expert. increasing human pretraining data reduces held-out robot action prediction error according to an empirical scaling law and raises the mean success rate on downstream real-robot tasks. after full-corpus pretraining and t800 adaptation, awaken-hi achieves a mean success rate of 93.75% across eight individual tasks and outperforms gr00t n1.7 and $π_{0.5}$ in both individual and long-horizon evaluations. the same policy generalizes to objects unseen during robot post-training and to new pairings of familiar objects and destinations.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #5</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">140</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">Awaken-HI: Scaling Humanoid Intelligence with Whole-Body Human Experience</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ EngineAI</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge">#humanoid</span><span class="badge">#vision-language-action</span>
-            </div>
-            
-            <p class="paper-summary">A central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces. Existing egocentric video datasets cover many of these activities but provide little synchronized whole-body motion data for learning loco-manipulation at scale. We build Awaken-Human, which pairs approximately 50,000 hours of egocentric stereo video with synchronized whole-body human motion and covers more than 100 skills. Building on this, we also introduce Awaken-HI (Humanoid Intelligence), a vision-language-action model for humanoid loco-manipulation that jointly predicts original human motion and retargeted robot actions through a shared action expert. We show that loco-manipulation skills transfer more effectively from people to humanoids when human trajectories directly supervise the shared action expert. Increasing human pretraining data reduces held-out robot action prediction error according to an empirical scaling law and raises the mean success rate on downstream real-robot tasks. After full-corpus pretraining and T800 adaptation, Awaken-HI achieves a mean success rate of 93.75% across eight individual tasks and outperforms GR00T N1.7 and $π_{0.5}$ in both individual and long-horizon evaluations. The same policy generalizes to objects unseen during robot post-training and to new pairings of familiar objects and destinations.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26420v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.26420v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="mind2act world: a diagnostic benchmark for embodied mind, physical action, and mind-action composition in robotic manipulation" data-summary="embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. we introduce mind2act world, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. each task has three difficulty levels and two scene settings (clean and random), yielding 180 configurations. the tasks form three views: mind tests decisions based on past observations, act tests precise and timely execution, and mind2act combines both in closed-loop tasks where action outcomes guide later decisions. comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. a diagnosis harness further attributes the failed episodes of three representative systems to mind, act, or their composition and summarizes each system in a profile card. our evaluation of multimodal agents, vision-language-action models (vlas), and world-action models (wams) shows that competence in a single view does not carry over to mind2act tasks. even the strongest agent succeeds in 52.7% of mind and 39.0% of act episodes but in only 12.0% of mind2act episodes. the strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. these findings point to composing reasoning and execution through environmental feedback as the main open problem.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #6</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">135</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation</h2>
+            <h2 class="paper-title">Trust What Repeats: Capped World-Model Policy Gradients for Humanoid Motion Tracking</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Yuzhi Huang, Jie Wu, Fanding Huang et al.</span>
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Xuzhe Dang, Stefan Edelkamp</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#vision-language-action</span><span class="badge">#vla</span>
+                <span class="badge">#humanoid</span><span class="badge">#world model</span>
             </div>
             
-            <p class="paper-summary">Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.</p>
+            <p class="paper-summary">Training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast, because the model gives a first-order policy gradient. We ask how much of that gradient holds in the simulator. On a tracker for the Unitree G1, the $0.5\%$ of imagined rollouts with the largest gradients carry $22\%$ of the summed gradient norm, yet neither a second rollout from the same state nor the simulator confirms them. When the actions are moved along the model's gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and 1% above 30 times; the part of a gradient that either check confirms stops growing at a few times the median. We therefore cap each rollout's action-gradient norm at 10 times the batch median, draw imagination starts in proportion to their predicted gradient norm so that the cap removes less, and reset episodes where the world model and critic predict the lowest return. Trained on 223 hours of motion and tested on 353 motions that no actor performed in training, the method raises the normalized return of SuperMimic, the baseline it builds on, from 0.953 to 0.967 and the lowest $1\%$ of test clips from 0.65 to 0.76, halves the test clips that fall persistently, from 15--18 to 7--10, and reaches the baseline's final return in 40% of the baseline's iterations and half its training time. On LAFAN1, trained and evaluated on the same clips as prior work, it reaches 0.935 against 0.906.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26444v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.27648v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.26444v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.27648v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="jarvis: an agent that designs, builds, and tests circuit boards on its own" data-summary="power electronics is central to the energy transition, but developing new hardware still relies on human-led design, fabrication, testing, and iteration. we present jarvis, an embodied ai agent that autonomously closes this loop for circuit boards. jarvis maintains machine-specific capabilities and constraints, scans its workspace using a robot-mounted 3d scanner, and constructs an executable digital twin in which it rehearses robot motions, fabrication steps, and circuit behavior before consuming materials. a single text instruction initiates the physical experiment. using unmodified desktop equipment, the agent coordinates a robot arm, a pcb printer that deposits conductive silver ink and solder paste, and a pick-and-place machine. it verifies progress using cameras and sensors, then tests the fabricated circuit with an opal-rt real-time simulator and an oscilloscope. based on the measurements, jarvis diagnoses deviations from the design and generates a revised design in kicad for subsequent rehearsal. in a demonstration involving a 60 hz notch filter for grid-connected converter sensing, jarvis completed a first-run experiment in 2 h 39 min without human intervention, achieving 50.6 db attenuation at 60 hz. its digital-twin rehearsal identified five issues before fabrication, including a test criterion that would have incorrectly rejected a functioning board. during execution, the agent also resolved encountered faults autonomously. these results demonstrate an integrated agent-driven workflow for physical design, fabrication, measurement, and iterative improvement of power-electronic circuitry. to our knowledge, jarvis is the first system in power electronics in which an agent closes the physical design-build-test-learn loop for circuit boards.">
+        <article class="paper-card" data-title="humanoid robots for safety-critical electrical switching: a perception-informed runtime constraint filter" data-summary="humanoid robots can reduce personnel exposure in electrical switching, but safe control is challenging because the tool must reach a target switch next to similar devices, where an imprecise operator command can contact a non-target switch. this study proposes a runtime safety filter that checks each operator command during virtual-reality teleoperation of a humanoid robot. the filter integrates a scene model estimated from the robot head camera and a target-conditioned control barrier function quadratic program that keeps the tool away from the non-target switch while passing safe commands unchanged. in real-world experiments on a unitree g1 humanoid robot, with six rounds at each of two standing positions, target operations succeed in all ten rounds with an unchanged target and no non-target actuation. a simulation study achieves 9/9 safe completions, compared with 5/9 for raw teleoperation, demonstrating the feasibility of the method for humanoid switching operations.">
             <div class="card-meta-top">
-                <span class="rank-tag">TOP #7</span>
+                <span class="rank-tag">TOP #3</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">100</span>
+                    <span class="score-value">115</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">JARVIS: An Agent That Designs, Builds, and Tests Circuit Boards on Its Own</h2>
+            <h2 class="paper-title">Humanoid robots for safety-critical electrical switching: A perception-informed runtime constraint filter</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Shibo Zhou, Tianqi Hong, Zheng Yan et al.</span>
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Songyang Liu, Yu Hou, Yuqing Hu et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#embodied ai</span>
+                <span class="badge">#humanoid</span><span class="badge">#teleoperation</span>
             </div>
             
-            <p class="paper-summary">Power electronics is central to the energy transition, but developing new hardware still relies on human-led design, fabrication, testing, and iteration. We present JARVIS, an embodied AI agent that autonomously closes this loop for circuit boards. JARVIS maintains machine-specific capabilities and constraints, scans its workspace using a robot-mounted 3D scanner, and constructs an executable digital twin in which it rehearses robot motions, fabrication steps, and circuit behavior before consuming materials. A single text instruction initiates the physical experiment. Using unmodified desktop equipment, the agent coordinates a robot arm, a PCB printer that deposits conductive silver ink and solder paste, and a pick-and-place machine. It verifies progress using cameras and sensors, then tests the fabricated circuit with an OPAL-RT real-time simulator and an oscilloscope. Based on the measurements, JARVIS diagnoses deviations from the design and generates a revised design in KiCad for subsequent rehearsal. In a demonstration involving a 60 Hz notch filter for grid-connected converter sensing, JARVIS completed a first-run experiment in 2 h 39 min without human intervention, achieving 50.6 dB attenuation at 60 Hz. Its digital-twin rehearsal identified five issues before fabrication, including a test criterion that would have incorrectly rejected a functioning board. During execution, the agent also resolved encountered faults autonomously. These results demonstrate an integrated agent-driven workflow for physical design, fabrication, measurement, and iterative improvement of power-electronic circuitry. To our knowledge, JARVIS is the first system in power electronics in which an agent closes the physical design-build-test-learn loop for circuit boards.</p>
+            <p class="paper-summary">Humanoid robots can reduce personnel exposure in electrical switching, but safe control is challenging because the tool must reach a target switch next to similar devices, where an imprecise operator command can contact a non-target switch. This study proposes a runtime safety filter that checks each operator command during virtual-reality teleoperation of a humanoid robot. The filter integrates a scene model estimated from the robot head camera and a target-conditioned control barrier function quadratic program that keeps the tool away from the non-target switch while passing safe commands unchanged. In real-world experiments on a Unitree G1 humanoid robot, with six rounds at each of two standing positions, target operations succeed in all ten rounds with an unchanged target and no non-target actuation. A simulation study achieves 9/9 safe completions, compared with 5/9 for raw teleoperation, demonstrating the feasibility of the method for humanoid switching operations.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26503v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.27845v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.26503v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.27845v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="beyond the sink interpretation: radial attention in flow-based vla policies" data-summary="prior work calls the high attention on the first and last action tokens of a flow-based vla policy a radial action sink, and uses these tokens to set the execution horizon. in language models, a sink is a token with high incoming attention, a small value, and little effect on the output. we test whether that profile holds, not the horizon rule, in one $π_{0.5}$ checkpoint on five robocasa tasks. the two endpoints receive 5.4% of action-key mass, 1.4 percentage points above their uniform share, and rotary positional encoding produces this excess: directly in shallow layers and through upstream action-token rope deeper in the network. the endpoints do not fit the sink profile. their value norms stay near the action-token mean in all 18 layers. on 250 paired episodes, masking them or zeroing their values changes success by less than 4 points, and replacing their value directions with those of another observation lowers it by 3.2 to 7.2 points across three donors, whereas the same replacement on two non-endpoint tokens in the executed prefix lowers it by 28.4 points. the token that does fit the sink profile on mass and value norm is the prefix bos; on this checkpoint, zeroing its value raises success in two paired runs, by +13.2 points (95% ci [+7.0, +19.4]) and +6.0 points ([+0.2, +11.8]). inside the action chunk, a relative-offset routing profile estimated on other tasks keeps 75% of action-token spread and keeps closed-loop success on three held-out tasks (42.7% against a 38.7% baseline), while uniform or shuffled routing drops success to 3-4%. high attention mass alone does not tell what a token does.">
+        <article class="paper-card" data-title="s-bfm: a behavioral foundation model for humanoid control from sparse spatiotemporal goals" data-summary="general-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. however, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. in this paper, we propose s-bfm, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. specifically, we first introduce spatial grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. then, time-conditioned distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. lastly, generative fine-tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. in simulation, s-bfm lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. we further deploy s-bfm on the full-size agibot a3 humanoid. sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.">
             <div class="card-meta-top">
-                <span class="rank-tag">TOP #8</span>
+                <span class="rank-tag">TOP #4</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">95</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Kun Yang, Xuanyu Chen, Jing Tan et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#humanoid</span>
+            </div>
+            
+            <p class="paper-summary">General-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. However, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. Inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. Specifically, we first introduce Spatial Grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Then, Time-Conditioned Distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Lastly, Generative Fine-Tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. We further deploy S-BFM on the full-size AGIBOT A3 humanoid. Sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.27552v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.27552v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="soar: training-free rank-consistent rollout compression for latent world model planning" data-summary="latent world models plan by rolling out hundreds of candidate action sequences through a transformer predictor, so a single decision can take tens of seconds. existing accelerations prune spatial tokens as in vision-language models, yet a sampling-based planner uses predicted costs only to rank candidates, so a rollout can be compressed freely as long as the ranking survives. we propose soar, a training-free method that adapts rollout compression to each planning decision. at every decision, soar probes a few candidates under several token budgets and keeps the smallest budget that preserves their ranking, so it compresses as far as the current decision allows, without task labels. a closed-loop study of more than 80,000 episodes fixes the rest of the rollout: the first step, which alone reads a real observation, stays exact, and the context frame is cached rather than recomputed. on seven navigation and manipulation tasks with frozen checkpoints, soar matches dense-level planning success at 2.3x speedup and retains 98% at 2.5x. our code is available at https://github.com/starrywiki/soar.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #5</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">90</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">Beyond the Sink Interpretation: Radial Attention in Flow-Based VLA Policies</h2>
+            <h2 class="paper-title">SOAR: Training-Free Rank-Consistent Rollout Compression for Latent World Model Planning</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-19</span>
-                <span>✍️ Yuxi Zheng, Yueqian Lin, Yudong Liu et al.</span>
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Anqi Li, Kai Liu, Linghe Kong et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#vla</span>
+                <span class="badge">#world model</span>
             </div>
             
-            <p class="paper-summary">Prior work calls the high attention on the first and last action tokens of a flow-based VLA policy a radial action sink, and uses these tokens to set the execution horizon. In language models, a sink is a token with high incoming attention, a small value, and little effect on the output. We test whether that profile holds, not the horizon rule, in one $π_{0.5}$ checkpoint on five RoboCasa tasks. The two endpoints receive 5.4% of action-key mass, 1.4 percentage points above their uniform share, and rotary positional encoding produces this excess: directly in shallow layers and through upstream action-token RoPE deeper in the network. The endpoints do not fit the sink profile. Their value norms stay near the action-token mean in all 18 layers. On 250 paired episodes, masking them or zeroing their values changes success by less than 4 points, and replacing their value directions with those of another observation lowers it by 3.2 to 7.2 points across three donors, whereas the same replacement on two non-endpoint tokens in the executed prefix lowers it by 28.4 points. The token that does fit the sink profile on mass and value norm is the prefix BOS; on this checkpoint, zeroing its value raises success in two paired runs, by +13.2 points (95% CI [+7.0, +19.4]) and +6.0 points ([+0.2, +11.8]). Inside the action chunk, a relative-offset routing profile estimated on other tasks keeps 75% of action-token spread and keeps closed-loop success on three held-out tasks (42.7% against a 38.7% baseline), while uniform or shuffled routing drops success to 3-4%. High attention mass alone does not tell what a token does.</p>
+            <p class="paper-summary">Latent world models plan by rolling out hundreds of candidate action sequences through a transformer predictor, so a single decision can take tens of seconds. Existing accelerations prune spatial tokens as in vision-language models, yet a sampling-based planner uses predicted costs only to rank candidates, so a rollout can be compressed freely as long as the ranking survives. We propose SOAR, a training-free method that adapts rollout compression to each planning decision. At every decision, SOAR probes a few candidates under several token budgets and keeps the smallest budget that preserves their ranking, so it compresses as far as the current decision allows, without task labels. A closed-loop study of more than 80,000 episodes fixes the rest of the rollout: the first step, which alone reads a real observation, stays exact, and the context frame is cached rather than recomputed. On seven navigation and manipulation tasks with frozen checkpoints, SOAR matches dense-level planning success at 2.3x speedup and retains 98% at 2.5x. Our code is available at https://github.com/starrywiki/SOAR.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.26385v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.27639v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.26385v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.27639v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="synthesizing expressive human-object interactions via test-time latent adaptation" data-summary="when interacting with objects of unknown physical properties, humans sometimes probe, over-exert, stagger, and adjust through iterative adaptation instead of succeeding immediately. we argue that this process is an expressive but largely overlooked aspect of human-object interaction in motion synthesis. both kinematic data-driven methods and physics-based controllers tend to produce flawlessly executed motions: the former lack sufficient data for learning fine-grained adaptation, while the latter use reinforcement learning (rl) and privileged object dynamics to learn robust, deterministic behaviors. we propose exphoi (expressive human-object interaction), a test-time latent adaptation framework built on an rl-trained physics-based control policy. during policy training, we encode diverse object dynamics contexts into a structured latent space. at test time, advantage-weighted regression (awr) iteratively optimizes the latent code for an object with unknown physical properties. temporary mismatches between this code and the true object dynamics produce an expressive progression from tentative, error-prone trials to proficient interaction. adaptation behaviors inevitably come with occasional failures, so a high-level planner is introduced to handle failed cases to maintain full, consistent animations. we demonstrate our framework's effectiveness on a large-object transportation task, where such adaptation is especially pronounced. to train our framework, we introduce a mass-diverse object dataset with rich physical-property annotations. across carrying and push-pull, our method pairs over 90% success with markedly higher posture diversity, and is rated the most lifelike in our user study on animation liveliness.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #6</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">80</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">Synthesizing Expressive Human-Object Interactions via Test-time Latent Adaptation</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Zijing Wu, Yiping Li, ZhiPeng Yu et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#reinforcement learning</span>
+            </div>
+            
+            <p class="paper-summary">When interacting with objects of unknown physical properties, humans sometimes probe, over-exert, stagger, and adjust through iterative adaptation instead of succeeding immediately. We argue that this process is an expressive but largely overlooked aspect of human-object interaction in motion synthesis. Both kinematic data-driven methods and physics-based controllers tend to produce flawlessly executed motions: the former lack sufficient data for learning fine-grained adaptation, while the latter use reinforcement learning (RL) and privileged object dynamics to learn robust, deterministic behaviors. We propose ExpHOI (Expressive Human-Object Interaction), a test-time latent adaptation framework built on an RL-trained physics-based control policy. During policy training, we encode diverse object dynamics contexts into a structured latent space. At test time, Advantage-Weighted Regression (AWR) iteratively optimizes the latent code for an object with unknown physical properties. Temporary mismatches between this code and the true object dynamics produce an expressive progression from tentative, error-prone trials to proficient interaction. Adaptation behaviors inevitably come with occasional failures, so a high-level planner is introduced to handle failed cases to maintain full, consistent animations. We demonstrate our framework's effectiveness on a large-object transportation task, where such adaptation is especially pronounced. To train our framework, we introduce a mass-diverse object dataset with rich physical-property annotations. Across carrying and push-pull, our method pairs over 90% success with markedly higher posture diversity, and is rated the most lifelike in our user study on animation liveliness.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.27603v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.27603v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="task2hand: a contact-grounded skill for parametric dexterous-hand morphology design" data-summary="dexterous hand design demands repeated expert work across geometry, robot-description code, collision debugging, grasp initialization, and policy training. we present task2hand, a skill: a specification package that turns a functional manipulation brief into a parameterized hand model and routes every candidate through cost-ordered contact, dynamics, and learning gates. each gate returns a status and an evidence record; on failure, the skill records the earliest blocker, revises one bounded parameter group, and reruns the cheaper gates. the agent generates, validates, and trains autonomously within declared bounds, and escalates trade-offs, plateaus, and conflicting evidence to a human who sets the next design direction. an evidence-driven design trajectory for bidirectional in-hand manipulation yielded sage hand (skill-aware generative embodiment): four fingers, 16 actuated dof, an integrated guiding palm, compact roots, cylindrical tips, and a collision-cleared opposable thumb. under a matched training protocol, sage hand reaches 45.6% task success on a hexagonal prism against 37.3% for the leap hand, and 70.8% on a bicolor cylinder against 51.6%. dense simulated tactile input more than halves the cylinder drop rate. in a controlled iteration study, the skill path preserves capture at 164/165 trials while the path without the skill degrades to 14/165, confirming that the gates act as a regression guard during refinement. accepted candidates pack with urdf/mjcf, metrics, checkpoints, and a provenance manifest.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #7</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">50</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">Task2Hand: A Contact-Grounded Skill for Parametric Dexterous-Hand Morphology Design</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Haoyang Wang, Weibo Gao, Zhengxiong Li et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge badge-muted">#frontier</span>
+            </div>
+            
+            <p class="paper-summary">Dexterous hand design demands repeated expert work across geometry, robot-description code, collision debugging, grasp initialization, and policy training. We present Task2Hand, a Skill: a specification package that turns a functional manipulation brief into a parameterized hand model and routes every candidate through cost-ordered contact, dynamics, and learning gates. Each gate returns a status and an evidence record; on failure, the Skill records the earliest blocker, revises one bounded parameter group, and reruns the cheaper gates. The agent generates, validates, and trains autonomously within declared bounds, and escalates trade-offs, plateaus, and conflicting evidence to a human who sets the next design direction. An evidence-driven design trajectory for bidirectional in-hand manipulation yielded SAGE Hand (Skill-Aware Generative Embodiment): four fingers, 16 actuated DoF, an integrated guiding palm, compact roots, cylindrical tips, and a collision-cleared opposable thumb. Under a matched training protocol, SAGE Hand reaches 45.6% task success on a hexagonal prism against 37.3% for the LEAP hand, and 70.8% on a bicolor cylinder against 51.6%. Dense simulated tactile input more than halves the cylinder drop rate. In a controlled iteration study, the Skill path preserves capture at 164/165 trials while the path without the Skill degrades to 14/165, confirming that the gates act as a regression guard during refinement. Accepted candidates pack with URDF/MJCF, metrics, checkpoints, and a provenance manifest.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.27967v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.27967v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="real-time neuromorphic audio and vision perception for autonomous robotic applications: integration and experimental evaluation on a rover platform" data-summary="neuromorphic sensing and computing offer a promising alternative to conventional deep learning pipelines for mobile robots, where perception must run continuously under tight latency and energy constraints. however, most neuromorphic solutions are still evaluated offline or on isolated benchmarks, and their integration into complete robotic systems remains largely unexplored. in this technical report, a four-wheel rover platform is presented that combines three real-time perception pipelines: a classical audio tagging pipeline based on pretrained audio neural networks (panns) running on an nvidia jetson gpu, a neuromorphic audio pipeline in which a spiking neural network (snn) is deployed on the synsense xylo audio~2 chip, and a neuromorphic vision pipeline in which events from an event-based camera are processed by the spikeyolo spiking detector for traffic cone detection. on the xylo chip, the whole processing chain---from the microphone signal to the classification of low- and high-pitched sounds---is performed on-chip, while the host only configures the device and reads the output neurons. all models are deployed as containerised services and integrated through ros~2, and a configurable action dispatcher maps the detected classes to robot behaviours, closing the loop between perception and actuation. the platform is demonstrated in a proof-of-concept scenario in which the robot reacts to sound classes detected by both audio pipelines and detects traffic cones with the event camera, showing the feasibility of integrating neuromorphic hardware into a multimodal robotic platform operating in real time.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #8</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">50</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">Real-time neuromorphic audio and vision perception for autonomous robotic applications: Integration and experimental evaluation on a rover platform</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-20</span>
+                <span>✍️ Guillem Fustier-Castillo, Ruben Ribes-Serrano, Javier Naranjo-Alcazar et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge badge-muted">#frontier</span>
+            </div>
+            
+            <p class="paper-summary">Neuromorphic sensing and computing offer a promising alternative to conventional deep learning pipelines for mobile robots, where perception must run continuously under tight latency and energy constraints. However, most neuromorphic solutions are still evaluated offline or on isolated benchmarks, and their integration into complete robotic systems remains largely unexplored. In this technical report, a four-wheel rover platform is presented that combines three real-time perception pipelines: a classical audio tagging pipeline based on Pretrained Audio Neural Networks (PANNs) running on an NVIDIA Jetson GPU, a neuromorphic audio pipeline in which a spiking neural network (SNN) is deployed on the SynSense Xylo Audio~2 chip, and a neuromorphic vision pipeline in which events from an event-based camera are processed by the SpikeYOLO spiking detector for traffic cone detection. On the Xylo chip, the whole processing chain---from the microphone signal to the classification of low- and high-pitched sounds---is performed on-chip, while the host only configures the device and reads the output neurons. All models are deployed as containerised services and integrated through ROS~2, and a configurable action dispatcher maps the detected classes to robot behaviours, closing the loop between perception and actuation. The platform is demonstrated in a proof-of-concept scenario in which the robot reacts to sound classes detected by both audio pipelines and detects traffic cones with the event camera, showing the feasibility of integrating neuromorphic hardware into a multimodal robotic platform operating in real time.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.27953v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.27953v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
