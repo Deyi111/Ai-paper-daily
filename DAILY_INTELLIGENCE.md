@@ -1,61 +1,61 @@
-# 🤖 Embodied AI & Robotics Frontier Briefing (2026-11-23)
+# 🤖 Embodied AI & Robotics Frontier Briefing (2026-11-24)
 
 > *Automated Intelligence Briefing generated via custom ETL scoring pipeline. Prioritizes foundation models, manipulation, locomotion, and physical AI systems.*
 
 ---
 
-### Top 1: What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage
-- **Priority Score**: `170 pts` | **Published**: `2026-11-20`
-- **Focus Tracks**: `#humanoid` `#world model` `#quadruped`
-- **Key Authors**: Hassan Iqbal, Krishna Kumar
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27939v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27939v1)
+### Top 1: GeoMerge-OPD: Balanced Skill Integration in Vision-Language-Action Models
+- **Priority Score**: `205 pts` | **Published**: `2026-11-23`
+- **Focus Tracks**: `#humanoid` `#locomotion` `#vision-language-action` `#vla`
+- **Key Authors**: Le Yang, Haoyang Lyu, Honglei Jin et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.30632v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.30632v1)
 
 **Executive Abstract**:
-> When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. We argue that whether a learned model helps such a robot depends on its decision interface, that is, on what the model hands to the planner. A decision policy tells the planner what to do, whereas an outcome model, a kind of world model, predicts the consequences of each route. We study simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. We compare four interfaces. The first is a decision policy, and the second is the same policy trained with fixed penalties for infeasible routes. The third is an outcome model that predicts the feasibility and travel time of each route. The fourth, which we call a capability contract, is an outcome model that predicts the chance of success and the travel time of the robot on each terrain and composes them along a route. All share the same collected experience, matched tuning and risk calibration, and an uncertainty guard. Two comparatively low-risk probes let the capability contract rank hazardous terrains about as well as four new trials on every hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.
+> Vision-language-action (VLA) models excel at individual robotic skills, yet integrating heterogeneous skills into a single policy remains a key challenge for general-purpose robotic control, especially in whole-body tasks with differing manipulation and locomotion requirements. Common multi-skill integration strategies, such as joint fine-tuning and parameter merging, can induce unintended actions during closed-loop execution, severely degrading individual skills. Task-conditioned analysis of expert updates reveals response energy concentrated in a few dominant directions and opposing expert responses along high-energy directions within a shared, task-relevant response subspace. This structure co-occurs with unintended action shifts after merging. We propose GeoMerge-OPD, combining response-space regularization, parameter merging, and on-policy distillation. During independent expert fine-tuning, G-isometry constrains update-response gains within task-activation subspaces; the expert parameters are then statically merged into a student with preliminary multitask capabilities. Fine-tuned task experts serve as teachers, providing velocity-field supervision at the environment observations and intermediate action-flow states visited by the student to calibrate residual behavioral deviations. Experiments with two VLA backbones show strong, balanced humanoid skill integration on SIMPLE and consistent performance on LIBERO and LIBERO-PRO, outperforming joint fine-tuning and multitask reinforcement-learning baselines while maintaining robustness under perturbations.
 
 ---
 
-### Top 2: Trust What Repeats: Capped World-Model Policy Gradients for Humanoid Motion Tracking
-- **Priority Score**: `135 pts` | **Published**: `2026-11-20`
+### Top 2: World Models as Native Latent Action Models
+- **Priority Score**: `175 pts` | **Published**: `2026-11-23`
+- **Focus Tracks**: `#world model` `#vision-language-action` `#vla`
+- **Key Authors**: Qinyue Li, Weijie Qiao, Qingyi Tao et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.30898v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.30898v1)
+
+**Executive Abstract**:
+> Large and diverse video sources, such as egocentric human video and heterogeneous robot recordings, carry rich dynamics but come either without actions or without a shared action space. Latent action models (LAMs) can recover these dynamics, but they train their inverse- and forward-dynamics models (IDM, FDM) from scratch, trading off pixel reconstruction against latent capacity and accuracy. Pretrained video world models natively generate high-fidelity dynamics, yet represent them densely, entangled across all layers. Viewing the world model as a LAM, we show that these dynamics can be extracted with minimal changes to the model. Native LAM operates one pretrained video diffusion transformer as both IDM and FDM, with learnable dynamics registers as the only causal bridge between the two, and trains on counterfactual temporal pairs that differ in motion alone, so that the registers distill a video's dynamics into a compact native latent action. We further propose a pretraining paradigm for vision-language-action (VLA) policies, Pretraining Actions from World models (PAWlicy), in which Native LAM serves as a dynamics teacher on large-scale video; unlike world action models, it never generates video. Native latent actions outperform existing LAMs on the LARY benchmark in both action classification and control regression, and replay the same motion on new robots, in new scenes, and from human hands to robots, although no transfer objective is used in training. With a 3.8B model, PAWlicy reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, the highest among VLAs. On RoboDojo, it is competitive on every dimension we evaluate, and its Precision, evaluated by us, is on par with the leading leaderboard entries. On real robots, it improves over the pi_0.5 baseline on both tasks. Both stages use only public data and a publicly released world model.
+
+---
+
+### Top 3: Beyond Domain Randomization: Real-World Policy Adaptation in Learned Dynamics for Legged Robots
+- **Priority Score**: `140 pts` | **Published**: `2026-11-23`
+- **Focus Tracks**: `#bipedal` `#reinforcement learning` `#locomotion`
+- **Key Authors**: Rui Dai, Shunpeng Yang, Zhen Fu et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.30784v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.30784v1)
+
+**Executive Abstract**:
+> Reinforcement learning policies are often trained with static domain randomization for real-world deployment. However, real-world environments often exhibit unmodeled dynamic variations, such as payload changes or friction shifts, that lie outside the randomization distribution, leading to performance degradation upon deployment. We propose a framework that moves beyond static domain randomization by adapting a learned dynamics model to the deployed target conditions, with a concurrent teacher-student paradigm applied to both the policy and dynamics model. This framework integrates the dynamics model into an on-policy reinforcement learning pipeline, letting the performance of the policy align with the empirical target dynamics. Experimental validations on bipedal locomotion tasks demonstrate competitive adaptability under extreme physical variations, including a payload reaching 80% of self-weight and an oil-lubricated low-friction surface.
+
+---
+
+### Top 4: Can Multimodal Fusion MakeSense for Embodied Vision in Degraded Sensing?
+- **Priority Score**: `135 pts` | **Published**: `2026-11-23`
 - **Focus Tracks**: `#humanoid` `#world model`
-- **Key Authors**: Xuzhe Dang, Stefan Edelkamp
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27648v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27648v1)
+- **Key Authors**: Cheng-Ru Chou, Shih-Yu Lai, Pei-Lin Chiang et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.30836v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.30836v1)
 
 **Executive Abstract**:
-> Training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast, because the model gives a first-order policy gradient. We ask how much of that gradient holds in the simulator. On a tracker for the Unitree G1, the $0.5\%$ of imagined rollouts with the largest gradients carry $22\%$ of the summed gradient norm, yet neither a second rollout from the same state nor the simulator confirms them. When the actions are moved along the model's gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and 1% above 30 times; the part of a gradient that either check confirms stops growing at a few times the median. We therefore cap each rollout's action-gradient norm at 10 times the batch median, draw imagination starts in proportion to their predicted gradient norm so that the cap removes less, and reset episodes where the world model and critic predict the lowest return. Trained on 223 hours of motion and tested on 353 motions that no actor performed in training, the method raises the normalized return of SuperMimic, the baseline it builds on, from 0.953 to 0.967 and the lowest $1\%$ of test clips from 0.65 to 0.76, halves the test clips that fall persistently, from 15--18 to 7--10, and reaches the baseline's final return in 40% of the baseline's iterations and half its training time. On LAFAN1, trained and evaluated on the same clips as prior work, it reaches 0.935 against 0.906.
+> Embodied vision systems rely on complementary sensors to perceive and act as conditions change. Even models that accept arbitrary sensor subsets can exhibit negative fusion: adding a sensor increases prediction error. We propose MakeSense, a multimodal fusion framework that preserves sensor-specific evidence in private streams and combines information through shared bottleneck tokens. Training pairs full and subset views of the same degraded observations, penalizing higher error with more sensors. Where geometry permits, the distance readout uses range measurements alone, while the rest of the prediction draws on all available inputs. Paired tests across five datasets reveal helpful and harmful sensor additions. MakeSense reduces negative fusion on MM-Fi. With lightweight adapters and per-dataset training, the same design improves UAV localization on MMAUD, cooperative 3D detection on V2X-Real, few-shot pose transfer to RELI11D, and command prediction on Humanoid-Everyday, where a world model trained on the frozen core's outputs forecasts future fused states more accurately than a linear baseline at longer tested horizons. MakeSense supports embodied sensing across human activity, aerial systems, robotics, and autonomous driving.
 
 ---
 
-### Top 3: Humanoid robots for safety-critical electrical switching: A perception-informed runtime constraint filter
-- **Priority Score**: `115 pts` | **Published**: `2026-11-20`
-- **Focus Tracks**: `#humanoid` `#teleoperation`
-- **Key Authors**: Songyang Liu, Yu Hou, Yuqing Hu et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27845v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27845v1)
+### Top 5: ABI: Actor-Free Behavior-Induced Representations for Zero-Shot Test-Time Guidance
+- **Priority Score**: `105 pts` | **Published**: `2026-11-23`
+- **Focus Tracks**: `#reinforcement learning` `#locomotion`
+- **Key Authors**: Yifei Yao, Yude Zou, Guanbo Jiao et al.
+- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.30636v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.30636v1)
 
 **Executive Abstract**:
-> Humanoid robots can reduce personnel exposure in electrical switching, but safe control is challenging because the tool must reach a target switch next to similar devices, where an imprecise operator command can contact a non-target switch. This study proposes a runtime safety filter that checks each operator command during virtual-reality teleoperation of a humanoid robot. The filter integrates a scene model estimated from the robot head camera and a target-conditioned control barrier function quadratic program that keeps the tool away from the non-target switch while passing safe commands unchanged. In real-world experiments on a Unitree G1 humanoid robot, with six rounds at each of two standing positions, target operations succeed in all ten rounds with an unchanged target and no non-target actuation. A simulation study achieves 9/9 safe completions, compared with 5/9 for raw teleoperation, demonstrating the feasibility of the method for humanoid switching operations.
-
----
-
-### Top 4: S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals
-- **Priority Score**: `95 pts` | **Published**: `2026-11-20`
-- **Focus Tracks**: `#humanoid`
-- **Key Authors**: Kun Yang, Xuanyu Chen, Jing Tan et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27552v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27552v1)
-
-**Executive Abstract**:
-> General-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. However, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. Inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. Specifically, we first introduce Spatial Grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Then, Time-Conditioned Distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Lastly, Generative Fine-Tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. We further deploy S-BFM on the full-size AGIBOT A3 humanoid. Sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.
-
----
-
-### Top 5: SOAR: Training-Free Rank-Consistent Rollout Compression for Latent World Model Planning
-- **Priority Score**: `90 pts` | **Published**: `2026-11-20`
-- **Focus Tracks**: `#world model`
-- **Key Authors**: Anqi Li, Kai Liu, Linghe Kong et al.
-- **Direct Access**: [arXiv Abstract](http://arxiv.org/abs/2611.27639v1) | [PDF Fulltext](http://arxiv.org/pdf/2611.27639v1)
-
-**Executive Abstract**:
-> Latent world models plan by rolling out hundreds of candidate action sequences through a transformer predictor, so a single decision can take tens of seconds. Existing accelerations prune spatial tokens as in vision-language models, yet a sampling-based planner uses predicted costs only to rank candidates, so a rollout can be compressed freely as long as the ranking survives. We propose SOAR, a training-free method that adapts rollout compression to each planning decision. At every decision, SOAR probes a few candidates under several token budgets and keeps the smallest budget that preserves their ranking, so it compresses as far as the current decision allows, without task labels. A closed-loop study of more than 80,000 episodes fixes the rest of the rollout: the first step, which alone reads a real observation, stays exact, and the context frame is cached rather than recomputed. On seven navigation and manipulation tasks with frozen checkpoints, SOAR matches dense-level planning success at 2.3x speedup and retains 98% at 2.5x. Our code is available at https://github.com/starrywiki/SOAR.
+> Behavior-cloning policies show strong ability in sequential control by generating coherent multi-step action chunks, yet their purely imitative objective limits zero-shot generalization to unseen tasks. While offline reinforcement learning offers principled policy improvement, existing methods either require task-specific reward supervision or remain tied to a specific actor during critic training or policy deployment, inflating training cost and restricting cross-policy generalization. We observe that evaluating actions under the data-collecting behavior largely preserves their relative value ordering across target policies, offering a way around actor coupling. Combining this property with reward-free successor prediction, we propose Actor-Free Behavior-Induced Representations (ABI) to learn multi-horizon action-chunk representations from unlabeled trajectories without reward supervision or actor training. At test time, pairing the frozen representation with lightweight task readouts forms a chunk critic that guides target policies without parameter updates and transfers directly across distinct unseen policies. Our analysis establishes when the value ordering is preserved across policies and when selecting among proposed chunks improves closed-loop return. Across 65 locomotion, navigation, and manipulation tasks, ABI's chunk critic guides weak imitation policies to match or surpass zero-shot RL baselines with high sample efficiency, outperforms existing zero-shot critics on identical proposals, and improves externally trained RL actors without retraining. From raw pixels, ABI delivers substantial guidance gains and surpasses prior zero-shot RL baselines on visual manipulation, highlighting its potential for visuomotor control.
 
 ---
 
