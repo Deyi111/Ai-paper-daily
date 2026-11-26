@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embodied AI & Robotics Intelligence Digest — November 25, 2026</title>
+    <title>Embodied AI & Robotics Intelligence Digest — November 26, 2026</title>
     <style>
         :root {
             --bg-base: #080c14;
@@ -242,7 +242,7 @@
         <header>
             <span class="pill-brand">Autonomous Research Intelligence</span>
             <h1>Embodied AI & Physical Frontier Briefing</h1>
-            <p class="subtitle">Compiled on November 25, 2026 • Ranked top 8 strategic breakthroughs out of incoming preprints.</p>
+            <p class="subtitle">Compiled on November 26, 2026 • Ranked top 8 strategic breakthroughs out of incoming preprints.</p>
             
             <div class="controls">
                 <input type="text" id="filterInput" class="search-box" placeholder="Filter papers by keywords (e.g. humanoid, tactile, diffusion)...">
@@ -251,257 +251,257 @@
 
         <main id="paperList">
             
-        <article class="paper-card" data-title="dynamimic: a physics-informed world model for humanoid motion tracking" data-summary="whole-body motion tracking enables humanoid robots to reproduce diverse skills from human demonstrations. existing model-free reinforcement learning methods either distill motion specialists into a single policy at the cost of performance or train a generalist policy directly using cluster-scale computation. supermimic reduces this computational cost through a differentiable world model that implicitly learns the physics shared across motions by predicting the next state from the current state and action. however, this implicit formulation may not fully capture the underlying physical processes. errors around changes of support can accumulate over imagined rollouts used to train the tracking policy. to address this challenge, we introduce dynamimic, a differentiable world model that explicitly incorporates shared physics into state prediction. specifically, its network predicts a contact wrench at each candidate support link and a residual generalized force. dynamimic then uses these predictions to compute the next state through closed-form lagrangian forward dynamics. across 60 full lafan1 motions, dynamimic reduces mean per-joint position error (mpjpe) by 18.6% relative to supermimic. for terrain tracking, we give both methods the same local height maps. relative to terrain-conditioned supermimic, dynamimic reduces mpjpe by 14.9% on a3 parkour (66.15 to 56.28~mm) and by 10.8% on grail terrain clips (141.88 to 126.57~mm). on a real a3 humanoid, the learned policies can perform diverse skills, such as floor recovery, cartwheel and a box vault.">
+        <article class="paper-card" data-title="cairn: object-centric 3d trajectory priors for steering frozen vlas" data-summary="vision-language-action models (vlas) are capable low-level controllers, but they tie where objects go to the layouts they were trained on: when objects are moved or obstacles block the way, they carry them to the wrong place or into collisions. fine-tuning on new layouts needs robot data for each one and erodes skills the model already has. we introduce cairn, which keeps the vla frozen and steers it at test time along learned 3d trajectories of the object in its gripper. a small prior reads point clouds of the scene and the held object, along with its pose when grasped and the instruction, and samples se(3) trajectories up to its release that lead it around obstacles and turn it to fit through gaps. the prior and the vla form the two levels of a hierarchical planner in which feedback runs both ways: the vla's intended motion chooses and reshapes the trajectories, and the chosen one guides the vla's denoising. its predicted actions, mapped to the held object's poses through the grasp, are pulled toward the next waypoint, while the vla's weights stay untouched. across 1,941 held-out libero scenes with displaced objects and obstacles, cairn raises the success rate of a frozen π0.5 from 24.5% to 95.1%, above that of a π0.5 fine-tuned on our training layouts, without hurting standard libero. on the third-party libero-pro benchmark, it raises success from 27.3% to 38.0%, and from 54.4% to 81.1% on the episodes it steers. on a real franka, with a prior trained purely in simulation, it guides the frozen droid π0.5 around an obstacle and to a placement at the limit of the arm's reach, where it otherwise fails. all code, models and data will be made public.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #1</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">165</span>
+                    <span class="score-value">135</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">DynaMimic: A Physics-Informed World Model for Humanoid Motion Tracking</h2>
+            <h2 class="paper-title">Cairn: Object-Centric 3D Trajectory Priors for Steering Frozen VLAs</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Chaoyue Xing, Linyi Huang, Yiting He et al.</span>
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Agelos Kratimenos, Kostas Daniilidis, Evangelos Chatzipantazis</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#humanoid</span><span class="badge">#world model</span><span class="badge">#reinforcement learning</span>
+                <span class="badge">#vision-language-action</span><span class="badge">#vla</span>
             </div>
             
-            <p class="paper-summary">Whole-body motion tracking enables humanoid robots to reproduce diverse skills from human demonstrations. Existing model-free reinforcement learning methods either distill motion specialists into a single policy at the cost of performance or train a generalist policy directly using cluster-scale computation. SuperMimic reduces this computational cost through a differentiable world model that implicitly learns the physics shared across motions by predicting the next state from the current state and action. However, this implicit formulation may not fully capture the underlying physical processes. Errors around changes of support can accumulate over imagined rollouts used to train the tracking policy. To address this challenge, we introduce DynaMimic, a differentiable world model that explicitly incorporates shared physics into state prediction. Specifically, its network predicts a contact wrench at each candidate support link and a residual generalized force. DynaMimic then uses these predictions to compute the next state through closed-form Lagrangian forward dynamics. Across 60 full LAFAN1 motions, DynaMimic reduces mean per-joint position error (MPJPE) by 18.6% relative to SuperMimic. For terrain tracking, we give both methods the same local height maps. Relative to terrain-conditioned SuperMimic, DynaMimic reduces MPJPE by 14.9% on A3 Parkour (66.15 to 56.28~mm) and by 10.8% on GRAIL terrain clips (141.88 to 126.57~mm). On a real A3 humanoid, the learned policies can perform diverse skills, such as floor recovery, cartwheel and a box vault.</p>
+            <p class="paper-summary">Vision-language-action models (VLAs) are capable low-level controllers, but they tie where objects go to the layouts they were trained on: when objects are moved or obstacles block the way, they carry them to the wrong place or into collisions. Fine-tuning on new layouts needs robot data for each one and erodes skills the model already has. We introduce Cairn, which keeps the VLA frozen and steers it at test time along learned 3D trajectories of the object in its gripper. A small prior reads point clouds of the scene and the held object, along with its pose when grasped and the instruction, and samples SE(3) trajectories up to its release that lead it around obstacles and turn it to fit through gaps. The prior and the VLA form the two levels of a hierarchical planner in which feedback runs both ways: the VLA's intended motion chooses and reshapes the trajectories, and the chosen one guides the VLA's denoising. Its predicted actions, mapped to the held object's poses through the grasp, are pulled toward the next waypoint, while the VLA's weights stay untouched. Across 1,941 held-out LIBERO scenes with displaced objects and obstacles, Cairn raises the success rate of a frozen π0.5 from 24.5% to 95.1%, above that of a π0.5 fine-tuned on our training layouts, without hurting standard LIBERO. On the third-party LIBERO-PRO benchmark, it raises success from 27.3% to 38.0%, and from 54.4% to 81.1% on the episodes it steers. On a real Franka, with a prior trained purely in simulation, it guides the frozen DROID π0.5 around an obstacle and to a placement at the limit of the arm's reach, where it otherwise fails. All code, models and data will be made public.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.32944v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.34914v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.32944v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.34914v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="embodied ai fails the mirror test: how a simple mirror breaks robot policies" data-summary="can a simple mirror expose the limitations of today's robotic manipulation policies? inspired by the mirror self-recognition test in animal cognition, we investigate whether robot policies can reliably manipulate physical objects in scenes containing their reflections. we introduce robodojo-mirror, a benchmark built on robodojo that preserves task objectives, success criteria, and policy checkpoints while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop conditions. across five policies spanning vision-language-action models, world action models, and agentic policies, every mirror condition reduces aggregate success rates: averaged over the three conditions, the drop ranges from 10.8 to 56.7 percentage points across policies, and it reaches 62.5 points on the mirrored tabletop. because a mirror is also a physical obstacle, we compare it against geometrically matched non-reflective panels; 50--88\% of mirror-specific failures occur without recorded robot--panel contact, so direct collisions alone do not explain the degradation. trajectory and contact analyses instead reveal recurring behaviors consistent with phantom targeting of reflected objects and spatial mislocalization of real ones. targeted diagnostics further characterize grasping near reflections, policy-dependent pushing progress, and physical-target interaction under main-camera occlusion. real-robot experiments with $π_{0.5}$ and fastwam also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions. these findings reveal a shared vulnerability to reflective environments across diverse robot policies and motivate reflection-aware evaluation of embodied intelligence. code is available at https://github.com/ipplab/robodojo-mirror.">
+        <article class="paper-card" data-title="repace: reasoning about demonstration speedup for faster vision-language-action policies" data-summary="since vision-language-action (vla) policies can inherit the slow pace of human demonstrations, accelerating these demonstrations before fine-tuning can lead to faster vla policies without an additional speed-selection module at deployment. several offline speedup methods have focused on identifying segments that require less precision and assigning predefined speedup factors to the segments. however, even within a single segment, a speedup factor suitable for steady motion may be too high when precise alignment is required. to this end, this paper presents repace, an offline reasoning framework that determines how much to accelerate each part of a demonstration. for the same recorded movement, repace measures how much each candidate speedup factor shortens the sequence and compares the resulting observation-action pairs used for training. given the task instruction, a pretrained language model uses the visual context and original motion of successive windows to interpret these candidate retiming effects and select a speedup profile for the complete episode. experimental results demonstrate that repace outperforms the baselines in overall task execution efficiency on both libero and robocasa-kitchen. on all three tasks with a gripper-equipped franka research 3 arm, repace matches or exceeds the acceleration baselines in success rate and completes successful trials faster.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #2</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">145</span>
+                    <span class="score-value">135</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies</h2>
+            <h2 class="paper-title">RePace: Reasoning about Demonstration Speedup for Faster Vision-Language-Action Policies</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Xuanchen Liu, Hejun Zhang, Boxuan Dong et al.</span>
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Insup Lee, Hojin Jeon, Sunguk Shin et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#embodied ai</span><span class="badge">#vision-language-action</span>
+                <span class="badge">#vision-language-action</span><span class="badge">#vla</span>
             </div>
             
-            <p class="paper-summary">Can a simple mirror expose the limitations of today's robotic manipulation policies? Inspired by the mirror self-recognition test in animal cognition, we investigate whether robot policies can reliably manipulate physical objects in scenes containing their reflections. We introduce RoboDojo-Mirror, a benchmark built on RoboDojo that preserves task objectives, success criteria, and policy checkpoints while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop conditions. Across five policies spanning Vision-Language-Action models, World Action Models, and agentic policies, every mirror condition reduces aggregate success rates: averaged over the three conditions, the drop ranges from 10.8 to 56.7 percentage points across policies, and it reaches 62.5 points on the mirrored tabletop. Because a mirror is also a physical obstacle, we compare it against geometrically matched non-reflective panels; 50--88\% of mirror-specific failures occur without recorded robot--panel contact, so direct collisions alone do not explain the degradation. Trajectory and contact analyses instead reveal recurring behaviors consistent with phantom targeting of reflected objects and spatial mislocalization of real ones. Targeted diagnostics further characterize grasping near reflections, policy-dependent pushing progress, and physical-target interaction under main-camera occlusion. Real-robot experiments with $π_{0.5}$ and FastWAM also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions. These findings reveal a shared vulnerability to reflective environments across diverse robot policies and motivate reflection-aware evaluation of embodied intelligence. Code is available at https://github.com/iPPLab/robodojo-mirror.</p>
+            <p class="paper-summary">Since vision-language-action (VLA) policies can inherit the slow pace of human demonstrations, accelerating these demonstrations before fine-tuning can lead to faster VLA policies without an additional speed-selection module at deployment. Several offline speedup methods have focused on identifying segments that require less precision and assigning predefined speedup factors to the segments. However, even within a single segment, a speedup factor suitable for steady motion may be too high when precise alignment is required. To this end, this paper presents RePace, an offline reasoning framework that determines how much to accelerate each part of a demonstration. For the same recorded movement, RePace measures how much each candidate speedup factor shortens the sequence and compares the resulting observation-action pairs used for training. Given the task instruction, a pretrained language model uses the visual context and original motion of successive windows to interpret these candidate retiming effects and select a speedup profile for the complete episode. Experimental results demonstrate that RePace outperforms the baselines in overall task execution efficiency on both LIBERO and RoboCasa-Kitchen. On all three tasks with a gripper-equipped Franka Research 3 arm, RePace matches or exceeds the acceleration baselines in success rate and completes successful trials faster.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.33010v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.34864v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.33010v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.34864v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="pyrua-dex: learning programmatic policies for dexterous bimanual manipulation with coding agents" data-summary="learning for dexterous manipulation is limited by the scarcity of high-quality demonstrations: retargeting from human video is imprecise, teleoperation gives no force feedback to the operator, and exoskeleton-based collection is hard to scale up. we present pyrua-dex, a framework that enables coding agents to develop dexterous manipulation through programmatic policy, without the need of demonstrations. the programmatic policy is developed in two stages: during exploration, multiple agents explore in parallel for task skills and ways to compose them, and a distilling agent condenses the successful attempts into a task library and one program. during refinement, this program is improved through randomized layouts for enhanced robustness and execution efficiency. in simulated environments, pyrua-dex achieves sota on bench2dex with a score of 72.9 and reaches 81.0% success on dexjoco under full randomization, ahead of every trained policy on both benchmarks. in real world experiments on a bimanual platform with two 22-dof hands, pyrua-dex learns to play piano, write calligraphy, and other tasks efficiently: learning a new piece from sheet music takes as little as 30 minutes. these results suggest that pyrua-dex is an effective framework for developing dexterous manipulation policies with coding agents in the absence of high quality dexterous manipulation demonstrations.">
+        <article class="paper-card" data-title="toward agentic robotics: a large-scale study of harness design for robot-use agents" data-summary="recent vision-language models (vlms) can act as robot-use agents that understand diverse scenes and control robots through policy code and tools. however, they predict 3d gripper poses poorly even with extended reasoning, struggling with precise manipulation. vision-language-action (vla) and world-action (wam) models are the opposite: they execute fast, smooth control on trained tasks, yet fail under domain shifts or when tasks require long-horizon memory and reasoning. agentic robots therefore combine vlm reasoning and perception with precise vla/wam control through a policy harness. yet harness design spans thousands of configurations, shifting success by tens of points with the same models. moreover, testing even one design takes thousands of rollouts at high api and gpu cost, so prior works often commit to a single design chosen from few alternatives. to guide harness design, we evaluate over 470,000 rollouts across eight simulation benchmarks, six vlms, and 15 vla/wam checkpoints. seven controlled studies show effective harnesses must adapt to both vlm and vla/wam capabilities. our findings specify what structure the vlm's policy code needs, where vla manipulation needs help from tools and policy code, and when to involve the vlm at test time. the reference recipe x-harness shows that these findings compose without weight updates, lifting base policies up to $+42.8$ points across memory, reasoning, and domain shifts.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #3</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">100</span>
+                    <span class="score-value">135</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents</h2>
+            <h2 class="paper-title">Toward Agentic Robotics: A Large-Scale Study of Harness Design for Robot-Use Agents</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Feixiang Ruan, Guodong Lv, Kewei Zhang et al.</span>
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Yuxiang Lai, Jike Zhong, Yu-Jhe Li et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#dexterous manipulation</span><span class="badge">#teleoperation</span>
+                <span class="badge">#vision-language-action</span><span class="badge">#vla</span>
             </div>
             
-            <p class="paper-summary">Learning for dexterous manipulation is limited by the scarcity of high-quality demonstrations: retargeting from human video is imprecise, teleoperation gives no force feedback to the operator, and exoskeleton-based collection is hard to scale up. We present PyRUA-Dex, a framework that enables coding agents to develop dexterous manipulation through programmatic policy, without the need of demonstrations. The programmatic policy is developed in two stages: during exploration, multiple agents explore in parallel for task skills and ways to compose them, and a distilling agent condenses the successful attempts into a task library and one program. During refinement, this program is improved through randomized layouts for enhanced robustness and execution efficiency. In simulated environments, PyRUA-Dex achieves SOTA on Bench2Dex with a score of 72.9 and reaches 81.0% success on DexJoCo under full randomization, ahead of every trained policy on both benchmarks. In real world experiments on a bimanual platform with two 22-DoF hands, PyRUA-Dex learns to play piano, write calligraphy, and other tasks efficiently: learning a new piece from sheet music takes as little as 30 minutes. These results suggest that PyRUA-Dex is an effective framework for developing dexterous manipulation policies with coding agents in the absence of high quality dexterous manipulation demonstrations.</p>
+            <p class="paper-summary">Recent vision-language models (VLMs) can act as robot-use agents that understand diverse scenes and control robots through policy code and tools. However, they predict 3D gripper poses poorly even with extended reasoning, struggling with precise manipulation. Vision-language-action (VLA) and world-action (WAM) models are the opposite: they execute fast, smooth control on trained tasks, yet fail under domain shifts or when tasks require long-horizon memory and reasoning. Agentic robots therefore combine VLM reasoning and perception with precise VLA/WAM control through a policy harness. Yet harness design spans thousands of configurations, shifting success by tens of points with the same models. Moreover, testing even one design takes thousands of rollouts at high API and GPU cost, so prior works often commit to a single design chosen from few alternatives. To guide harness design, we evaluate over 470,000 rollouts across eight simulation benchmarks, six VLMs, and 15 VLA/WAM checkpoints. Seven controlled studies show effective harnesses must adapt to both VLM and VLA/WAM capabilities. Our findings specify what structure the VLM's policy code needs, where VLA manipulation needs help from tools and policy code, and when to involve the VLM at test time. The reference recipe X-Harness shows that these findings compose without weight updates, lifting base policies up to $+42.8$ points across memory, reasoning, and domain shifts.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.33144v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.34778v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.33144v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.34778v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="embodisafety: benchmarking risk understanding and response in embodied ai" data-summary="progress in embodied foundation models is largely measured by task success, while the physical safety of their decisions remains underexamined. safety evaluations centered on rule following and binary judgments do not adequately assess whether embodied models understand environmental hazards and make safe decisions. we introduce embodisafety, comprising 1,092 snapshot tasks and 540 trajectory tasks across 844 visual scenarios to assess safety over short and long horizons. six response modes cover direct execution, refusal, clarification, constrained execution, autonomous recovery, and human escalation. distinguishing recovery from human intervention makes the boundary of safe autonomy an explicit evaluation target. our protocol assesses mode correctness, risk identification, and actionable handling, with complete decision accuracy requiring all applicable checks to pass. claude-opus-5.5 achieves the highest complete decision accuracy among reference models, reaching 56.1% on snapshots and 61.5% on trajectories. we further develop a data construction pipeline and curate 40k examples for safety alignment. supervised training on this corpus raises the complete decision accuracy of qwen3.5-2b and qwen3.5-4b.">
+        <article class="paper-card" data-title="finedex: bridging fine-grained human-object interaction generation to dexterous humanoid manipulation" data-summary="dexterity is, at its core, finger-level control, yet existing dexterous manipulation and human-object interaction (hoi) generation methods rarely let one specify how an interaction is performed: five-fingered hands are often reduced to grippers, or finger usage is copied from individual human demonstrations. we present finedex, a framework that makes finger-level intent both expressible and executable. finedex learns coordinated human body, hand, and object motions that follow fine-grained instructions on hand selection, individual fingers, and contacts with articulated objects. to bridge generation and execution, finedex leverages generated interactions as actionable priors for an agent that discovers physically feasible contact strategies through practice in a physics-based digital twin. by adapting at test time without per-instance retraining, finedex generalizes across fine-grained instructions and object configurations. experiments demonstrate state-of-the-art hoi generation quality and fine-grained controllability, substantial improvements in dexterous manipulation success, and successful deployment on a real dexterous humanoid robot.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #4</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
-                    <span class="score-value">100</span>
+                    <span class="score-value">125</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI</h2>
+            <h2 class="paper-title">FineDex: Bridging Fine-Grained Human-Object Interaction Generation to Dexterous Humanoid Manipulation</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Erfei Cui, Shengjia Zhao, Yan Qin et al.</span>
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Yujia Zeng, Yuxin Chen, Yuzhen Song et al.</span>
             </div>
             
             <div class="badge-cluster">
-                <span class="badge">#embodied ai</span>
+                <span class="badge">#humanoid</span><span class="badge">#dexterous manipulation</span>
             </div>
             
-            <p class="paper-summary">Progress in embodied foundation models is largely measured by task success, while the physical safety of their decisions remains underexamined. Safety evaluations centered on rule following and binary judgments do not adequately assess whether embodied models understand environmental hazards and make safe decisions. We introduce EmbodiSafety, comprising 1,092 snapshot tasks and 540 trajectory tasks across 844 visual scenarios to assess safety over short and long horizons. Six response modes cover direct execution, refusal, clarification, constrained execution, autonomous recovery, and human escalation. Distinguishing recovery from human intervention makes the boundary of safe autonomy an explicit evaluation target. Our protocol assesses mode correctness, risk identification, and actionable handling, with complete decision accuracy requiring all applicable checks to pass. Claude-Opus-5.5 achieves the highest complete decision accuracy among reference models, reaching 56.1% on snapshots and 61.5% on trajectories. We further develop a data construction pipeline and curate 40k examples for safety alignment. Supervised training on this corpus raises the complete decision accuracy of Qwen3.5-2B and Qwen3.5-4B.</p>
+            <p class="paper-summary">Dexterity is, at its core, finger-level control, yet existing dexterous manipulation and human-object interaction (HOI) generation methods rarely let one specify how an interaction is performed: five-fingered hands are often reduced to grippers, or finger usage is copied from individual human demonstrations. We present FineDex, a framework that makes finger-level intent both expressible and executable. FineDex learns coordinated human body, hand, and object motions that follow fine-grained instructions on hand selection, individual fingers, and contacts with articulated objects. To bridge generation and execution, FineDex leverages generated interactions as actionable priors for an agent that discovers physically feasible contact strategies through practice in a physics-based digital twin. By adapting at test time without per-instance retraining, FineDex generalizes across fine-grained instructions and object configurations. Experiments demonstrate state-of-the-art HOI generation quality and fine-grained controllability, substantial improvements in dexterous manipulation success, and successful deployment on a real dexterous humanoid robot.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.33054v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.34884v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.33054v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.34884v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="what does a skill vocabulary cost? a closed-loop decomposition over demonstrated motions" data-summary="discrete skill policies execute motions drawn from a finite vocabulary. in most current methods, this vocabulary is a latent codebook learned jointly with a selector and a decoder. when such a policy fails in closed loop, the failure cannot be traced to the vocabulary, to the choice of skill or to its execution. we present movement prototype quantization (mpq), which places a library of demonstrated motions after a trained policy instead of inside it. mpq replaces each predicted action chunk with its nearest library element, corrects that element toward the prediction within a bound, and trains no parameters. across six architectures, including a 7b vision-language-action model, the wrapped policy is statistically equivalent to the original. a reference policy executed through the library is therefore a baseline for any selector over the same library. substituting a selector's components one at a time attributes its shortfall to them. on libero-90, with selectors on three backbones, quantization costs nothing and the choice of skill costs at most 2 points under the reference's placement and correction. the selectors' own placement and correction account for nearly all of the remaining gap, up to 12 points. offline reconstruction predicts none of these differences and misjudges library size, design and transfer across benchmark suites. project page: https://intuitive-robots.github.io/mpq.">
+        <article class="paper-card" data-title="dexlink: synthesizing dexterous behaviors from chained hand-object poses" data-summary="synthesizing diverse dexterous manipulation policies is challenging: existing simulation-based approaches rely on human demonstrations which are difficult to scale, or use generic reward functions, which provide limited control over the hand-object interactions. we propose dexlink, which addresses these limitations by synthesizing diverse dexterous behaviors from sparse, reusable hand-object interaction templates. given key task waypoints, dexlink retargets static interaction templates to target objects using an optimization that preserves spatial hand-object relationships. it then links the retargeted poses into an approximate reference trajectory and uses residual reinforcement learning to refine this reference into a closed-loop policy in simulation. experiments spanning single-hand, bimanual, articulated, and dynamic tasks demonstrate that dexlink provides fine-grained control over task timing, grasp types, and high-level execution. the modular interaction templates transfer reliably across object scales, instances, and categories; without object-specific human demonstrations, the framework also matches the performance of dense reference-tracking methods. finally, zero-shot deployment of policies trained purely in simulation shows promise for the simulation-based framework.">
             <div class="card-meta-top">
                 <span class="rank-tag">TOP #5</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">110</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">DexLink: Synthesizing Dexterous Behaviors from Chained Hand-object Poses</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Meenal Parakh, Deep Patel, Beining Han et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#reinforcement learning</span><span class="badge">#dexterous manipulation</span>
+            </div>
+            
+            <p class="paper-summary">Synthesizing diverse dexterous manipulation policies is challenging: existing simulation-based approaches rely on human demonstrations which are difficult to scale, or use generic reward functions, which provide limited control over the hand-object interactions. We propose DexLink, which addresses these limitations by synthesizing diverse dexterous behaviors from sparse, reusable hand-object interaction templates. Given key task waypoints, DexLink retargets static interaction templates to target objects using an optimization that preserves spatial hand-object relationships. It then links the retargeted poses into an approximate reference trajectory and uses residual reinforcement learning to refine this reference into a closed-loop policy in simulation. Experiments spanning single-hand, bimanual, articulated, and dynamic tasks demonstrate that DexLink provides fine-grained control over task timing, grasp types, and high-level execution. The modular interaction templates transfer reliably across object scales, instances, and categories; without object-specific human demonstrations, the framework also matches the performance of dense reference-tracking methods. Finally, zero-shot deployment of policies trained purely in simulation shows promise for the simulation-based framework.</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.34936v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.34936v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="roboevo$^2$: recursive robot self-improvement via harness-policy co-evolution" data-summary="robots should adapt to unfamiliar environments and acquire new skills through interaction, then execute those skills efficiently with practice. vision-language-action policies provide efficient control, but often need additional human demonstrations to handle unfamiliar settings; reasoning agents can discover solutions using broad prior knowledge and robot-control apis, but repeated deliberation and repair are costly. inspired by human learning through reasoning and practice, we propose roboevo$^2$, a framework for recursive harness-policy co-evolution. in policy-to-harness (p2h) evolution, policy failures guide a coding agent to search complementary code, code+icl, and code+policy routes, consolidating verified solutions into reusable skills, routing strategies, and experience memory. in harness-to-policy (h2p) evolution, verified trajectories provide supervised training, while counterfactual preference distillation (cpd) teaches the policy to favor successful corrections over failures from the same starting state. the improved policy provides stronger motor skills for subsequent search, while its remaining failures redirect harness evolution, closing the reciprocal loop. through recursive co-evolution without additional human demonstrations, roboevo$^2$ improves standalone success from 11.0% to 84.1% and hybrid success from 30.4% to 90.5% on libero-pro, with similar gains and reduced agentic costs on robotwin c2r. further experiments demonstrate autonomous task acquisition, cross-embodiment harness transfer, and 95.0% hybrid success on the unitree g1-d. our models and code will be publicly released.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #6</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">95</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">What Does a Skill Vocabulary Cost? A Closed-Loop Decomposition over Demonstrated Motions</h2>
+            <h2 class="paper-title">RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Maximilian Xiling Li, Nils Blank, Paul Mattes et al.</span>
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Chenzhi Liu, Jiehong Lin, Wei Huang et al.</span>
             </div>
             
             <div class="badge-cluster">
                 <span class="badge">#vision-language-action</span>
             </div>
             
-            <p class="paper-summary">Discrete skill policies execute motions drawn from a finite vocabulary. In most current methods, this vocabulary is a latent codebook learned jointly with a selector and a decoder. When such a policy fails in closed loop, the failure cannot be traced to the vocabulary, to the choice of skill or to its execution. We present Movement Prototype Quantization (MPQ), which places a library of demonstrated motions after a trained policy instead of inside it. MPQ replaces each predicted action chunk with its nearest library element, corrects that element toward the prediction within a bound, and trains no parameters. Across six architectures, including a 7B vision-language-action model, the wrapped policy is statistically equivalent to the original. A reference policy executed through the library is therefore a baseline for any selector over the same library. Substituting a selector's components one at a time attributes its shortfall to them. On LIBERO-90, with selectors on three backbones, quantization costs nothing and the choice of skill costs at most 2 points under the reference's placement and correction. The selectors' own placement and correction account for nearly all of the remaining gap, up to 12 points. Offline reconstruction predicts none of these differences and misjudges library size, design and transfer across benchmark suites. Project page: https://intuitive-robots.github.io/mpq.</p>
+            <p class="paper-summary">Robots should adapt to unfamiliar environments and acquire new skills through interaction, then execute those skills efficiently with practice. Vision-language-action policies provide efficient control, but often need additional human demonstrations to handle unfamiliar settings; reasoning agents can discover solutions using broad prior knowledge and robot-control APIs, but repeated deliberation and repair are costly. Inspired by human learning through reasoning and practice, we propose RoboEvo$^2$, a framework for recursive harness-policy co-evolution. In Policy-to-Harness (P2H) evolution, policy failures guide a coding agent to search complementary Code, Code+ICL, and Code+Policy routes, consolidating verified solutions into reusable skills, routing strategies, and experience memory. In Harness-to-Policy (H2P) evolution, verified trajectories provide supervised training, while Counterfactual Preference Distillation (CPD) teaches the policy to favor successful corrections over failures from the same starting state. The improved policy provides stronger motor skills for subsequent search, while its remaining failures redirect harness evolution, closing the reciprocal loop. Through recursive co-evolution without additional human demonstrations, RoboEvo$^2$ improves standalone success from 11.0% to 84.1% and hybrid success from 30.4% to 90.5% on LIBERO-PRO, with similar gains and reduced agentic costs on RoboTwin C2R. Further experiments demonstrate autonomous task acquisition, cross-embodiment harness transfer, and 95.0% hybrid success on the Unitree G1-D. Our models and code will be publicly released.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.32858v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.34675v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.32858v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.34675v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
         </article>
         
-        <article class="paper-card" data-title="iwam: efficient action prediction from world models without explicit future prediction" data-summary="world-action models (wams) build policies on pretrained video-generation models, on the premise that predicting how a scene evolves helps determine how to act. however, generating future scenes is expensive for real-time control. this motivates efficient proxies for future imagination, but how to train such proxies without sacrificing action-prediction quality remains unclear. an effective proxy need not generate a high-resolution frame; it only needs to provide enough information to distinguish between possible futures. this leads to the design principle behind iwam: rather than denoising an entire future frame, can we condition the action policy on intermediate features from a single video-model evaluation? we show that the answer is yes. exploiting the reversible dynamics of flow-matching models, we invert each training future into the corresponding latent noise vector. however, a single velocity evaluation at this latent does not necessarily yield informative features for action prediction. we therefore learn a bidirectional flow map that amortizes future-generation computation, enabling a single model evaluation to provide effective conditioning features. at inference, we sample a latent noise vector from the prior and condition the policy using just one video-backbone forward pass. across simulated benchmarks and real robots, iwam recovers the generalization benefits of wams while substantially reducing its inference cost.">
+        <article class="paper-card" data-title="elmo: emergent representations in imitation learning via dynamic hierarchical action chunking" data-summary="robot trajectories naturally decompose into variable-length phases with distinct semantic intents, such as reaching, grasping, and lifting. however, training policies to minimize mse treats all actions as equal, obscuring their semantic structure. while latent action models attempt to create a structured prediction target by compressing action chunks into latent representations, existing approaches rely on two-stage training and context-blind decoders. consequently, their representations are context-agnostic motion codes (e.g., "move down") which fail to capture behavioural intent (e.g., "pick up the block"). to overcome these bottlenecks, we introduce the emergent latent-action model (elmo), an end-to-end framework that encodes robot trajectories as grounded semantic codes -- representations that ground task-level behavioural intent in the current environment. elmo jointly trains a vla planner and an observation-conditioned decoder over dynamically chunked trajectories, learning a semantically grounded action space without separate pretraining. across standard benchmarks, elmo outperforms comparable prior methods by 9.6 percentage points on libero-plus and by 0.75 in average task length on calvin. furthermore, on blocks -- our shortcut-free simulation and real-world generalization benchmark -- elmo reaches a 38.6% success rate while all baselines remain below 5%, demonstrating its ability to capture the semantic structure of demonstrations. website: https://uoft-isl.github.io/elmo.github.io/">
             <div class="card-meta-top">
-                <span class="rank-tag">TOP #6</span>
+                <span class="rank-tag">TOP #7</span>
                 <div class="score-badge">
                     <span class="score-label">Priority Index</span>
                     <span class="score-value">90</span>
                 </div>
             </div>
             
-            <h2 class="paper-title">iWAM: Efficient Action Prediction from World Models without Explicit Future Prediction</h2>
+            <h2 class="paper-title">ELMO: Emergent Representations In Imitation Learning Via Dynamic Hierarchical Action Chunking</h2>
             
             <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Vansh Kapoor, Max Sobol Mark, Sreyas Venkataraman et al.</span>
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Jasper Gerigk, Yang Xu, Nicholas Rhinehart et al.</span>
+            </div>
+            
+            <div class="badge-cluster">
+                <span class="badge">#vla</span>
+            </div>
+            
+            <p class="paper-summary">Robot trajectories naturally decompose into variable-length phases with distinct semantic intents, such as reaching, grasping, and lifting. However, training policies to minimize MSE treats all actions as equal, obscuring their semantic structure. While latent action models attempt to create a structured prediction target by compressing action chunks into latent representations, existing approaches rely on two-stage training and context-blind decoders. Consequently, their representations are context-agnostic motion codes (e.g., "move down") which fail to capture behavioural intent (e.g., "pick up the block"). To overcome these bottlenecks, we introduce the Emergent Latent-action MOdel (ELMO), an end-to-end framework that encodes robot trajectories as grounded semantic codes -- representations that ground task-level behavioural intent in the current environment. ELMO jointly trains a VLA planner and an observation-conditioned decoder over dynamically chunked trajectories, learning a semantically grounded action space without separate pretraining. Across standard benchmarks, ELMO outperforms comparable prior methods by 9.6 percentage points on LIBERO-Plus and by 0.75 in average task length on CALVIN. Furthermore, on Blocks -- our shortcut-free simulation and real-world generalization benchmark -- ELMO reaches a 38.6% success rate while all baselines remain below 5%, demonstrating its ability to capture the semantic structure of demonstrations. Website: https://uoft-isl.github.io/elmo.github.io/</p>
+            
+            <div class="card-action-bar">
+                <a href="http://arxiv.org/pdf/2611.34741v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    View PDF
+                </a>
+                <a href="http://arxiv.org/abs/2611.34741v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    arXiv Page &rarr;
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-title="was the model given the right action? auditing and repairing action interfaces in navigation world models" data-summary="world models are evaluated by predicting future observations from actions. these evaluations assume that actions are prepared the same way as during training, but an unchecked mismatch can make a model appear less accurate than it is. we audit this assumption in navigation world models (nwm) and find three interacting differences between its training and rollout code. correcting the inputs, without retraining, reduces mean visual prediction error by 42%, measured with dreamsim on the recon navigation dataset. the correction also changes the ranking of nwm checkpoints in an exploratory analysis and removes or reduces two alternative models' measured advantages. correcting only the normalization offset instead increases error, showing why interacting mismatches must be checked together. to test whether sensitivity to input preparation extends beyond nwm, we deliberately introduce encoding errors into two alternative models; both become less accurate. we introduce actrosetta, a tool that checks whether action encoding matches training, identifies supported causes of disagreement, and repairs inputs when sufficient information is available. repair helps little where predictions barely respond to actions, the tool's diagnosis has limited coverage, and improved control remains unproven. for any action-conditioned world model, the lesson is the same: before reporting rollout error, verify that evaluation encodes actions exactly as training did.">
+            <div class="card-meta-top">
+                <span class="rank-tag">TOP #8</span>
+                <div class="score-badge">
+                    <span class="score-label">Priority Index</span>
+                    <span class="score-value">90</span>
+                </div>
+            </div>
+            
+            <h2 class="paper-title">Was the Model Given the Right Action? Auditing and Repairing Action Interfaces in Navigation World Models</h2>
+            
+            <div class="author-row">
+                <span>🗓️ 2026-11-25</span>
+                <span>✍️ Ajmain Istiak Apon, Md Mehedi Hasan, Sejuti Rahman</span>
             </div>
             
             <div class="badge-cluster">
                 <span class="badge">#world model</span>
             </div>
             
-            <p class="paper-summary">World-action models (WAMs) build policies on pretrained video-generation models, on the premise that predicting how a scene evolves helps determine how to act. However, generating future scenes is expensive for real-time control. This motivates efficient proxies for future imagination, but how to train such proxies without sacrificing action-prediction quality remains unclear. An effective proxy need not generate a high-resolution frame; it only needs to provide enough information to distinguish between possible futures. This leads to the design principle behind iWAM: rather than denoising an entire future frame, can we condition the action policy on intermediate features from a single video-model evaluation? We show that the answer is yes. Exploiting the reversible dynamics of flow-matching models, we invert each training future into the corresponding latent noise vector. However, a single velocity evaluation at this latent does not necessarily yield informative features for action prediction. We therefore learn a bidirectional flow map that amortizes future-generation computation, enabling a single model evaluation to provide effective conditioning features. At inference, we sample a latent noise vector from the prior and condition the policy using just one video-backbone forward pass. Across simulated benchmarks and real robots, iWAM recovers the generalization benefits of WAMs while substantially reducing its inference cost.</p>
+            <p class="paper-summary">World models are evaluated by predicting future observations from actions. These evaluations assume that actions are prepared the same way as during training, but an unchecked mismatch can make a model appear less accurate than it is. We audit this assumption in Navigation World Models (NWM) and find three interacting differences between its training and rollout code. Correcting the inputs, without retraining, reduces mean visual prediction error by 42%, measured with DreamSim on the RECON navigation dataset. The correction also changes the ranking of NWM checkpoints in an exploratory analysis and removes or reduces two alternative models' measured advantages. Correcting only the normalization offset instead increases error, showing why interacting mismatches must be checked together. To test whether sensitivity to input preparation extends beyond NWM, we deliberately introduce encoding errors into two alternative models; both become less accurate. We introduce ActRosetta, a tool that checks whether action encoding matches training, identifies supported causes of disagreement, and repairs inputs when sufficient information is available. Repair helps little where predictions barely respond to actions, the tool's diagnosis has limited coverage, and improved control remains unproven. For any action-conditioned world model, the lesson is the same: before reporting rollout error, verify that evaluation encodes actions exactly as training did.</p>
             
             <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.33141v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="http://arxiv.org/pdf/2611.34739v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     View PDF
                 </a>
-                <a href="http://arxiv.org/abs/2611.33141v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="at the limit: autonomous vehicle drifting under generative policies" data-summary="autonomous drifting requires agile control despite tire-force saturation and highly nonlinear vehicle dynamics. we propose an online reinforcement learning method for flow policies that combines stochastic differential equation (sde) sampling for exploration with value-based policy optimization. this method supports both training from scratch and fine-tuning a policy pretrained on expert demonstrations. after training, control actions can be generated using either sdes or ordinary differential equations (odes). experiments on circular and eight-shaped drifting in an f1tenth digital twin platform show that both training strategies can achieve effective real-time drift control, with tighter tracking, higher success rates, and better robustness under noisy conditions.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #7</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">80</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">At the Limit: Autonomous Vehicle Drifting under Generative Policies</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Jie He, Meixun Qu, Cheng Hu et al.</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge">#reinforcement learning</span>
-            </div>
-            
-            <p class="paper-summary">Autonomous drifting requires agile control despite tire-force saturation and highly nonlinear vehicle dynamics. We propose an online reinforcement learning method for flow policies that combines stochastic differential equation (SDE) sampling for exploration with value-based policy optimization. This method supports both training from scratch and fine-tuning a policy pretrained on expert demonstrations. After training, control actions can be generated using either SDEs or ordinary differential equations (ODEs). Experiments on circular and eight-shaped drifting in an F1TENTH digital twin platform show that both training strategies can achieve effective real-time drift control, with tighter tracking, higher success rates, and better robustness under noisy conditions.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.33040v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.33040v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    arXiv Page &rarr;
-                </a>
-            </div>
-        </article>
-        
-        <article class="paper-card" data-title="exploratory midtraining for robot policies" data-summary="robot policies predominantly learn from human-collected data emphasizing competent behavior, limiting coverage of the low-level behaviors needed to support autonomous improvement. we study how a form of midtraining can be used to build coverage over diverse low-level behaviors that connect challenging states of the robot and its environment to states from which further progress is possible ("connected behavioral coverage"). we also examine how this coverage supports downstream adaptation and online improvement. to this end, we introduce $β$-data, a dataset collected via adversarial teleoperation, where a human adversary reversibly perturbs the environment while a human operator continues toward completion without resetting. we relabel trajectory segments with local outcomes in natural language and finetune a pretrained policy conditioned on recent action history. the resulting policy exhibits sustained use of more low-level behaviors. across manipulation tasks in simulation and on three real-robot platforms, our approach yields more favorable data scaling laws, better zero-shot generalization, and more effective use of additional rollout time than training on standard demonstrations. during online finetuning, these policies need fewer rollouts to collect successful experience and reach higher success rates, suggesting that midtraining can prepare robots for both more robust task execution and continued autonomous improvement. our project page and robot videos are available at https://kshitiz-1225.github.io/exploratory-midtraining-robot-policies/.">
-            <div class="card-meta-top">
-                <span class="rank-tag">TOP #8</span>
-                <div class="score-badge">
-                    <span class="score-label">Priority Index</span>
-                    <span class="score-value">70</span>
-                </div>
-            </div>
-            
-            <h2 class="paper-title">Exploratory Midtraining for Robot Policies</h2>
-            
-            <div class="author-row">
-                <span>🗓️ 2026-11-24</span>
-                <span>✍️ Kshitiz, Zheyuan Hu, Robyn Wu et al.</span>
-            </div>
-            
-            <div class="badge-cluster">
-                <span class="badge">#teleoperation</span>
-            </div>
-            
-            <p class="paper-summary">Robot policies predominantly learn from human-collected data emphasizing competent behavior, limiting coverage of the low-level behaviors needed to support autonomous improvement. We study how a form of midtraining can be used to build coverage over diverse low-level behaviors that connect challenging states of the robot and its environment to states from which further progress is possible ("connected behavioral coverage"). We also examine how this coverage supports downstream adaptation and online improvement. To this end, we introduce $β$-Data, a dataset collected via adversarial teleoperation, where a human adversary reversibly perturbs the environment while a human operator continues toward completion without resetting. We relabel trajectory segments with local outcomes in natural language and finetune a pretrained policy conditioned on recent action history. The resulting policy exhibits sustained use of more low-level behaviors. Across manipulation tasks in simulation and on three real-robot platforms, our approach yields more favorable data scaling laws, better zero-shot generalization, and more effective use of additional rollout time than training on standard demonstrations. During online finetuning, these policies need fewer rollouts to collect successful experience and reach higher success rates, suggesting that midtraining can prepare robots for both more robust task execution and continued autonomous improvement. Our project page and robot videos are available at https://kshitiz-1225.github.io/exploratory-midtraining-robot-policies/.</p>
-            
-            <div class="card-action-bar">
-                <a href="http://arxiv.org/pdf/2611.33130v1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    View PDF
-                </a>
-                <a href="http://arxiv.org/abs/2611.33130v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="http://arxiv.org/abs/2611.34739v1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     arXiv Page &rarr;
                 </a>
             </div>
